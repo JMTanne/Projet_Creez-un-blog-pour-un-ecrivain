@@ -20,11 +20,12 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, comment_author, comment_content, creation_date) VALUES(?, ?, ?, NOW())');
-        $newComment = $comments->execute(array($postId, $commentAuthor, $commentContent));
+        $comments->execute(array($postId, $commentAuthor, $commentContent));
+        $newComment = $comments->fetch();
 
         return $newComment;
     }
-
+    
     // Fonction permettant la suppression du commentaire
     public function removeComment($commentId)
     {
