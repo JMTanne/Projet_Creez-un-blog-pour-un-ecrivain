@@ -1,6 +1,6 @@
 <?php 
-use \P4\Projet\Session;
-require_once('ControllerSessionClass.php');
+use \P4\Projet\Controller\Session;
+require_once('controller/ControllerSessionClass.php');
 
 $session = new Session();
 $session->flash();

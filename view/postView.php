@@ -14,7 +14,7 @@
             <div class="chapter">
                 <h3>
                     <?= htmlspecialchars($post['post_title']) ?>
-                    <em>le <?= $post['creation_date_fr'] ?></em>
+                    <em> ajouté le <?= $post['creation_date_fr'] ?></em>
                 </h3>
                 
                 <p>
