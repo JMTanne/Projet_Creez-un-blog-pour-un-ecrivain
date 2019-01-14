@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "Roboto Regular";
+    src: url('public/ressources/font/Roboto-Regular.ttf');
+}
+/* Eléments principaux de la page */
+body{
+    font-family: 'Roboto Regular', serif;
+}
+/* Header */
+header{
+    display: flex;
+    justify-content: space-between;
+}
+header #logo{
+    margin-left: 80px;
+}
+header nav{
+   margin-right: 130px;
+}
+
+/* Navigation */
+nav ul{
+    display: flex;
+    list-style-type: none;
+    padding-top: 10px;
+}
+nav li{
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 1.8em;
+}
+nav a{
+    text-decoration: none;
+    color: #e1a55b;
+    padding: 8px;
+}
+nav a:hover{
+    border-top: 2px solid #e1a55b;
+    padding-top: 25px;
+}
+/* Sections de la page welcome */
+.index_pages{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome_index{
+    width: 70%;
+    height: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1.1em;
+    margin-bottom: 120px;
+}
+
+#welcome_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+/*    height: 500px;*/
+}
+
+#welcome_lastPosts{
+    border: 2px solid #e1a55b;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+#listPosts_index{
+    width: 70%;
+    height: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1.1em;
+    margin-bottom: 120px;
+}
+
+h1, h3
+{
+    text-align:center;
+}
+h3
+{
+    background-color:#adadad;
+    color:black;
+    font-size:1.5em;
+    margin-bottom:0px;
+}
+.italic
+{
+    font-style: italic;
+}
+
+.chapter_container{
+    border: 2px solid #e1a55b;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+
+.chapter p
+{
+    background-color:#CCCCCC;
+    margin-top:0px;
+}
+.chapter
+{
+    width:90%;
+    margin:auto;
+}
+
+a
+{
+    text-decoration: none;
+    color: blue;
+}
