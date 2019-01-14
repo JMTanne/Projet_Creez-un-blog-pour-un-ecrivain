@@ -1,10 +1,19 @@
+<?php 
+use \P4\Projet\Session;
+require_once('ControllerSessionClass.php');
+
+$session = new Session();
+$session->flash();
+?>
+
 <?php $title = 'Modifier votre commentaire'; ?>
 
 <?php ob_start(); ?>
+
 <h1>Commentaires du Chapitre <?= $post['chapter_id']?></h1>
 
 <p>
-    <a class="back_link" href="index.php?action=allPosts">Retour à la liste des chapitres</a>
+    <a class="back_link" href="index.php?action=post&amp;id=<?= $post['id'] ?>">Retour au Chapitre <?= $post['chapter_id']?></a>
 </p>
 
 <div class="index_pages">
@@ -18,15 +27,34 @@
 		<div class="comments_container">
 
 			    <p><strong><?= htmlspecialchars($comment['comment_author']) ?></strong> le <?= $comment['creation_date_fr'] ?></p>
-			    <p><em class="italic">"<?= nl2br(htmlspecialchars($comment['comment_content'])) ?>"</em></p>
+			    <p><em class="italic">"<?= nl2br(htmlspecialchars($comment['comment_content'])) ?>"</em>
+
+			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">Supprimer</a></p>
+
+			    <p><a class="signal" href="index.php?action=alertComment&amp;id=<?= $comment['id'] ?>">Signaler le commentaire</a></p>
 
 		</div>
 	<?php
 	}
 	?>
+
+	<p>Ajouter un commentaire ?</p>
+
+	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+		<div>
+    		<label for="author">Auteur</label><br />
+    		<input type="text" id="author" name="comment_author" />
+		</div>
+		<div>
+    		<label for="comment">Commentaire</label><br />
+    		<textarea id="comment" name="comment_content"></textarea>
+		</div>
+		<div>
+    		<input type="submit" />
+		</div>
+	</form>
 	
 </div>
-
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

@@ -21,7 +21,7 @@
                     <?= nl2br(htmlspecialchars($post['post_content'])) ?>
                 </p>
                 <p>
-                    <em><a class="comments" href="#">[Commentaires]</a></em><em>-</em><em><a class="alert" href="#">[Signaler]</a></em>
+                    <em><a class="comments" href="index.php?action=comments&amp;id=<?= $post['id'] ?>">[Commentaires]</a></em>
                     <br />
                 </p>
             </div>
