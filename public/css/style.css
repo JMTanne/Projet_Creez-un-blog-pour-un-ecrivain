@@ -39,7 +39,14 @@ header #logo{
     margin-left: 80px;
 }
 header nav{
-   margin-right: 130px;
+    margin-right: 130px;
+}
+
+.alert{
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1060;
 }
 
 /* Navigation */
@@ -156,4 +163,9 @@ nav a:hover{
     margin-left: 20px;
     margin-right: 100px;
     margin-bottom: 20px;
+}
+
+.comments_container p{
+    margin-left: 20px;
+    font-style: italic;
 }
