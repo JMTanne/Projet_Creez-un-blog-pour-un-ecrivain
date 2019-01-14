@@ -10,7 +10,10 @@ try {
                 allPosts();
                 break;
             case "post":
-                echo "Redirection vers la page 'post'";
+                post();
+                break;
+            case "comments":
+                comments();
                 break;
             case "addComment":
                 echo "Redirection vers la page 'addComment'";
