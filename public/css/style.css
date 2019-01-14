@@ -60,16 +60,19 @@ nav li{
     margin-left: 10px;
     font-size: 1.8em;
 }
-nav a{
+
+.links_header{
     text-decoration: none;
     color: #e1a55b;
-    padding: 8px;
-    font-size: 1.1em;
+    padding: 6px;
+    font-size: 0.8em;
 }
-nav a:hover{
-    border-top: 2px solid #e1a55b;
-    padding-top: 25px;
+
+.links_header:hover{
+    border-top: 2px solid #1e8cb5;
+    padding-top: 6px;
 }
+
 /* Sections de la page welcome */
 .index_pages{
     display: flex;
@@ -96,8 +99,8 @@ nav a:hover{
     border: 2px solid #e1a55b;
     border-radius: 20px;
     width: 50%;
-    margin-left: 20px;
-    margin-right: 100px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 /* Sections de la page "listPosts" */
@@ -123,11 +126,12 @@ nav a:hover{
 {
     background-color:#CCCCCC;
     margin-top:0px;
-}
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
 }
 .chapter
 {
-    width:90%;
     margin:auto;
 }
 
@@ -168,4 +172,108 @@ nav a:hover{
 .comments_container p{
     margin-left: 20px;
     font-style: italic;
+}
+
+
+/* Section Back Office */
+.BO_links_header{
+    text-decoration: none;
+    color: #1e8cb5;
+    padding: 6px;
+    font-size: 0.6em;
+}
+
+.BO_links_header:hover{
+    border-top: 2px solid #8999a6;
+    padding-top: 6px;
+}
+
+.BO_links_backToSite{
+    text-decoration: none;
+    color: #8999a6;
+    padding: 6px;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.BO_links_backToSite:hover{
+    border-top: 2px solid #8999a6;
+    padding-top: 6px;
+}
+
+#BO_welcome_footer{
+    margin-top: 10px;
+}
+
+#BO_welcome_footer p{
+    text-decoration: none;
+    padding: 6px;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* Section BO de la page "allAlerts" */
+#BO_welcome_index{
+    width: 70%;
+    height: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1.1em;
+    margin-bottom: 80px;
+}
+
+#BO_welcome_allAlerts{
+    border: 2px solid #1e8cb5;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.alerts p
+{
+    background-color:#CCCCCC;
+    margin-top:0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+.alerts
+{
+    margin:auto;
+}
+
+/* Section BO de la page "addPost" */
+#BO_addPost p{
+    text-align: center;
+}
+
+/* Section BO de la page "allPosts" */
+.BO_chapter_container{
+    border: 2px solid #1e8cb5;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+
+.BO_index_pages{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.BO_chapter p
+{
+    background-color:#CCCCCC;
+    margin-top:0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+.BO_chapter
+{
+    margin:auto;
 }
