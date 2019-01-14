@@ -2,7 +2,7 @@
 <html>
    <head>
       <meta charset="utf-8" />
-      <link rel="stylesheet" href="public/css/styles.css"/> 
+      <link rel="stylesheet" href="public/css/style.css"/> 
       <title><?= $title ?></title>
    </head>
    <body>
@@ -14,8 +14,8 @@
             <nav>
                <!-- nav part bloc/container -->
                <ul>
-                  <li><a href="#">Accueil</a></li>
-                  <li><a href="#">Lire le livre</a></li>
+                  <li><a href="index.php">Accueil</a></li>
+                  <li><a href="index.php?action=allPosts">Lire le livre</a></li>
                   <li><a href="#">identification</a></li>
                </ul>
             </nav>
