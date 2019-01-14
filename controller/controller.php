@@ -1,13 +1,22 @@
 <?php
 // Appel des namespaces
 use \P4\Projet\Model\PostManager;
-use \P4\Projet\Model\CommentManager;
 
 // Chargement des classes
 require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
 
-function welcome()
+function lastPost()
 {
+    $postManager = new PostManager();
+    $lastChapter = $postManager->getLastPost();
+
     require('view/welcomeView.php');
+}
+
+function allPosts()
+{
+    $postManager = new PostManager();
+    $posts = $postManager->getPosts();
+
+    require('view/listPostsView.php');
 }
