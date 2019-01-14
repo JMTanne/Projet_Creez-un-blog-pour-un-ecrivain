@@ -2,10 +2,34 @@
     font-family: "Roboto Regular";
     src: url('public/ressources/font/Roboto-Regular.ttf');
 }
+
 /* Eléments principaux de la page */
 body{
     font-family: 'Roboto Regular', serif;
 }
+h1, h3
+{
+    text-align:center;
+}
+h3
+{
+    background-color:#adadad;
+    color:black;
+    font-size:1.5em;
+    margin-bottom:0px;
+}
+.italic
+{
+    font-style: italic;
+}
+.back_link
+{
+    text-decoration: none;
+    color: blue;
+    font-size: 1.2em;
+    margin-left: 260px;
+}
+
 /* Header */
 header{
     display: flex;
@@ -33,6 +57,7 @@ nav a{
     text-decoration: none;
     color: #e1a55b;
     padding: 8px;
+    font-size: 1.1em;
 }
 nav a:hover{
     border-top: 2px solid #e1a55b;
@@ -56,11 +81,8 @@ nav a:hover{
 }
 
 #welcome_section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-/*    height: 500px;*/
+    width: 90%;
+    height: 500px;
 }
 
 #welcome_lastPosts{
@@ -71,6 +93,7 @@ nav a:hover{
     margin-right: 100px;
 }
 
+/* Sections de la page "listPosts" */
 #listPosts_index{
     width: 70%;
     height: 100px;
@@ -78,22 +101,6 @@ nav a:hover{
     margin-left: 20px;
     font-size: 1.1em;
     margin-bottom: 120px;
-}
-
-h1, h3
-{
-    text-align:center;
-}
-h3
-{
-    background-color:#adadad;
-    color:black;
-    font-size:1.5em;
-    margin-bottom:0px;
-}
-.italic
-{
-    font-style: italic;
 }
 
 .chapter_container{
@@ -110,14 +117,43 @@ h3
     background-color:#CCCCCC;
     margin-top:0px;
 }
+}
 .chapter
 {
     width:90%;
     margin:auto;
 }
 
-a
-{
+.all_chapter{
     text-decoration: none;
     color: blue;
+    font-size: 1.2em;
+}
+.comments{
+    text-decoration: none;
+    color: blue;
+    font-size: 1.1em;
+}
+.alert{
+    text-decoration: none;
+    color: blue;
+    font-size: 1.0em;
+}
+
+/* Sections de la page "Post" */
+.index_chapitre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sections de la page "Comments" */
+.comments_container{
+    border: 2px solid #e1a55b;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 100px;
+    margin-bottom: 20px;
 }
