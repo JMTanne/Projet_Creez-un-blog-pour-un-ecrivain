@@ -36,4 +36,38 @@ class ControllerPosts
 
         require('view/postView.php');
     }
+
+    public function addPost()
+    {
+        require('view/BO_addPostView.php');
+    }
+    
+    public function newPost($postId, $postTitle, $postContent)
+    {
+    
+    $postManager = new PostManager();
+    $newPost = $postManager->postChapter($postId, $postTitle, $postContent);
+
+    $session = new Session();
+    $session->setFlash('Votre nouveau Chapitre a été ajouté au site !', 'success');
+
+    header('Location: index.php?action=BO_addPost');
+    
+    }
+
+    public function BO_allPosts()
+    {
+        $postManager = new PostManager();
+        $posts = $postManager->BO_getPosts();
+
+        require('view/BO_listPostsView.php');
+    }
+
+    public function BO_post($postId)
+    {
+        $postManager = new PostManager();
+        $post = $postManager->BO_getPost($postId);
+
+        require('view/BO_postView.php');
+    }
 }

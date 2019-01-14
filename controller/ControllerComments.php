@@ -5,12 +5,12 @@ namespace P4\Projet\Controller;
 // Appel des namespaces
 use \P4\Projet\Model\PostManager;
 use \P4\Projet\Model\CommentManager;
-use \P4\Projet\Session;
+use \P4\Projet\Controller\Session;
 
 // Chargement des classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
-require_once('ControllerSessionClass.php');
+require_once('controller/ControllerSessionClass.php');
 
 class ControllerComments
 {
@@ -42,18 +42,7 @@ class ControllerComments
         } 
     }
 
-     public function alertComment($postId, $commentAuthor, $commentContent)
-    {
-        $commentManager = new CommentManager();
-        $newComment = $commentManager->postComment($postId, $commentAuthor, $commentContent);
-        
-        $session = new Session();
-        $session->setFlash('Le commentaire a été signalé. Merci!', 'info');
-
-        header('Location: index.php?action=comments&id=' . $postId);
-    }
-
-    function deleteComment($commentId, $postId)
+    public function deleteComment($commentId, $postId)
     {
         $commentManager = new CommentManager();
         $delete = $commentManager->removeComment($commentId);
