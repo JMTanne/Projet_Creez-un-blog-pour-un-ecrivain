@@ -23,7 +23,7 @@
                <ul>
                   <li><a class="links_header" href="index.php">Accueil</a></li>
                   <li><a class="links_header" href="index.php?action=allPosts">Lire le livre</a></li>
-                  <li><a class="links_header" href="#">Identification</a></li>
+                  <li><a class="links_header" href="index.php?action=login">Identification</a></li> 
                   <li><a class="links_header" href="index.php?action=BO_welcome">Administration</a></li>
                   
                </ul>
