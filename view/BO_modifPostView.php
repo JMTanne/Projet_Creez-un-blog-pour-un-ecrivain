@@ -23,7 +23,7 @@ $session->flash();
 			<form method="post" action="index.php?action=BO_postUpdated&amp;id=<?=$post['id']?>">
 				<div>
 		    		<label for="chapterContent">Contenu du Chapitre</label><br />
-		    		<textarea rows="20" cols="50" id="chapterContent" name="postContent"><?=$post["post_content"]?></textarea>
+		    		<textarea id="mytextarea" rows="20" cols="50" name="postContent"><?=$post["post_content"]?></textarea>
 				</div>
 				<div>
 		    		<input type="submit" value="Valider la modification du Chapitre"/>

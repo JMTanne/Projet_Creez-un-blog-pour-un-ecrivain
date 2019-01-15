@@ -30,7 +30,7 @@
                 
                     <p>
                     <?=                    
-                    nl2br(htmlspecialchars(implode(' ', $contentPreview))) . '... ' ?> <em><a class="all_chapter" href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire le chapitre entier</a></em>
+                    nl2br(implode(' ', $contentPreview)) . '... ' ?> <em><a class="all_chapter" href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire le chapitre entier</a></em>
                     </p>
                     <p>
                     <em><a class="comments" href="index.php?action=comments&amp;id=<?= $data['id'] ?>">[Commentaires]</a></em>

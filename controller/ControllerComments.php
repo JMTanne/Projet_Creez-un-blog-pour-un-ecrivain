@@ -45,7 +45,7 @@ class ControllerComments
         $session = new Session();
         $session->setFlash('Le commentaire a été supprimé avec succès !', 'success');
 
-        header('Location: index.php?action=comments&id=' . $postId);
+        header('Location: index.php?action=BO_allComments&id=' . $postId);
     }
 
     public function BO_comments($postId, $comments)

@@ -35,7 +35,7 @@ $session->flash();
 		        	</h3>
 		        
 			        <p>
-			            <?= nl2br(htmlspecialchars(substr($data['post_content'], 0, 1000))) . '... ' ?> <em><a class="all_chapter" href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire le chapitre entier</a></em>
+			            <?= nl2br(substr($data['post_content'], 0, 1000)) . '... ' ?> <em><a class="all_chapter" href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire le chapitre entier</a></em>
 			        </p>
 			        <p>
 			            <em><a class="comments" href="index.php?action=comments&amp;id=<?= $data['id'] ?>">[Commentaires]</a></em>

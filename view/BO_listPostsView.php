@@ -38,11 +38,11 @@ $session->flash();
                 
                     <p>
                     <?=                    
-                    nl2br(htmlspecialchars(implode(' ', $contentPreview))) . '... ' ?> <em><a class="all_chapter" href="index.php?action=BO_post&amp;id=<?= $data['id'] ?>">Voir le chapitre entier</a></em>
+                    nl2br(implode(' ', $contentPreview)) . '... ' ?> <em><a class="all_chapter" href="index.php?action=BO_post&amp;id=<?= $data['id'] ?>">Voir le chapitre entier</a></em>
                     </p>
                     <p>
                     <em><a class="modifPost" href="index.php?action=BO_updatePost&amp;id=<?= $data['id'] ?>">[Modifier le Chapitre]</a></em>
-                    <em><a class="deletePost" href="index.php?action=BO_deletePost&amp;id=<?= $data['id'] ?>">[Supprimer le Chapitre]</a></em>
+                    <em><a class="deletePost" href="index.php?action=BO_deletePost&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce Chapitre ?'));">[Supprimer le Chapitre]</a></em>
                     <em><a class="deleteComment" href="index.php?action=BO_allComments&amp;id=<?= $data['id'] ?>">[Commentaires]</a></em>
                     <br />
                     

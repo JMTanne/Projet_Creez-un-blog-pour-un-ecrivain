@@ -35,11 +35,13 @@ $session->flash();
 		            	
 		            </h3>
 		            <p>
-		            	Voici son commentaire : <em>"<?= htmlspecialchars($data['alert_commentContent']) ?>"</em>
-		            	<br/><em><a class="validComment" href="index.php?action=BO_deleteAlert&amp;alertId=<?= $data['id'] ?>">[Valider le commentaire]</a></em><em> - </em><em><a class="deleteComment" href="index.php?action=BO_validAlert&amp;commentId=<?= $data['alert_commentId'] ?>&amp;alertId=<?= $data['id'] ?>">[Supprimer le commentaire]</a></em></p>
-		            </p>
+		            	Voici son commentaire : <em>"<?= $data['alert_commentContent'] ?>"</em>
+		            	<br/><em><a class="validComment" href="index.php?action=BO_deleteAlert&amp;alertId=<?= $data['id'] ?>"" onclick="return(confirm('Etes-vous sûr de vouloir valider ce commentaire signalé ?'));">[Valider le commentaire]</a></em>
+		            	
+		            	<em> - </em>
 
-		        	
+		            	<em><a class="deleteComment" href="index.php?action=BO_validAlert&amp;commentId=<?= $data['alert_commentId'] ?>&amp;alertId=<?= $data['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire signalé ?'));">[Supprimer le commentaire]</a></em></p>
+		            </p>
 			    </div>
 			<?php
 			}

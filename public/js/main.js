@@ -13,3 +13,7 @@ jQuery(function($){
 		})
 	}
 });
+
+tinymce.init({
+    selector: '#mytextarea'
+  });

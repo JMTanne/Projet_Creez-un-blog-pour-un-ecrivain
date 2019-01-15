@@ -31,7 +31,7 @@ $session->flash();
 				</div>
 				<div>
 		    		<label for="chapterContent">Contenu du Chapitre</label><br />
-		    		<textarea rows="20" cols="50" id="chapterContent" name="post_content"></textarea>
+		    		<textarea id="mytextarea" rows="20" cols="50" name="post_content"></textarea>
 				</div>
 				<div>
 		    		<input type="submit" value="Ajouter le nouveau Chapitre"/>

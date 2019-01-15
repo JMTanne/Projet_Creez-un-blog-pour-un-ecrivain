@@ -27,9 +27,9 @@ $session->flash();
 		<div class="BO_commentsContainer">
 
 			    <p><strong><?= htmlspecialchars($comment['comment_author']) ?></strong> le <?= $comment['creation_date_fr'] ?></p>
-			    <p><em class="italic">"<?= nl2br(htmlspecialchars($comment['comment_content'])) ?>"</em>
+			    <p><em class="italic">"<?= nl2br($comment['comment_content']) ?>"</em>
 
-			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">Supprimer</a></p>
+			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 		</div>
 	<?php
 	}

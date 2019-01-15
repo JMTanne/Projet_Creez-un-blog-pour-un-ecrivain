@@ -27,11 +27,11 @@ $session->flash();
 		<div class="comments_container">
 
 			    <p><strong><?= htmlspecialchars($comment['comment_author']) ?></strong> le <?= $comment['creation_date_fr'] ?></p>
-			    <p><em class="italic">"<?= nl2br(htmlspecialchars($comment['comment_content'])) ?>"</em>
+			    <p><em class="italic">"<?= nl2br($comment['comment_content']) ?>"</em>
 
-			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">Supprimer</a></p>
+			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>"" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 
-			    <p><a class="signal" href="index.php?action=alertComment&amp;commentId=<?= $comment['id'] ?>&amp;commentPostId=<?= $comment['post_id'] ?>&amp;commentAuthor=<?= $comment['comment_author'] ?>&amp;commentContent=<?= $comment['comment_content'] ?>&amp;commentDate=<?= $comment['creation_date_fr'] ?>&amp;postId=<?= $post['id'] ?>">Signaler le commentaire</a></p>
+			    <p><a class="signal" href="index.php?action=alertComment&amp;commentId=<?= $comment['id'] ?>&amp;commentPostId=<?= $comment['post_id'] ?>&amp;commentAuthor=<?= $comment['comment_author'] ?>&amp;commentContent=<?= $comment['comment_content'] ?>&amp;commentDate=<?= $comment['creation_date_fr'] ?>&amp;postId=<?= $post['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir signaler ce commentaire ?'));">Signaler le commentaire</a></p>
 
 		</div>
 	<?php
