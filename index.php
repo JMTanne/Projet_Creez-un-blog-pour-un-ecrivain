@@ -33,7 +33,7 @@ try {
                 $initControllerComments->newComment($_GET['id'], $_POST['comment_author'], $_POST['comment_content']);
                 break;
             case "alertComment":
-                $initControllerAlerts->alert($_GET['commentId'], $_GET['commentPostId'], $_GET['commentAuthor'], $_GET['commentContent'], $_GET['postId']);
+                $initControllerAlerts->alert($_GET['commentId'], $_GET['commentPostId'], $_GET['commentAuthor'], $_GET['commentContent'], $_GET['commentDate'], $_GET['postId']);
                 break;
             case "commentDeleted":
                 $initControllerComments->deleteComment($_GET['id'], $_GET['postId']);
@@ -46,8 +46,11 @@ try {
             case "BO_welcome":
                 $initControllerAlerts->allAlerts();
                 break;
-            case "BO_deleteAlert":
+            case "BO_deleteAlert": // valid comment
                 $initControllerAlerts->deleteAlert($_GET['alertId']);
+                break;
+            case "BO_validAlert": // delete comment
+                $initControllerAlerts->confirmAlert($_GET['commentId'], $_GET['alertId']);
                 break;
             case "BO_addPost":
                 $initControllerPosts->addPost();
@@ -59,13 +62,22 @@ try {
                 $initControllerPosts->BO_allPosts();
                 break;
             case "BO_post":
-                $initControllerPosts->BO_post($_GET['id']);
+                $initControllerPosts->BO_post($_GET['id'], $_GET['id']);
                 break;
             case "BO_modifPost":
                 echo "Redirection vers la page 'BO_modifPost Back Office'";
                 break;
             case "BO_deletePost":
-                echo "Redirection vers la page 'BO_modifPost Back Office'";
+                $initControllerPosts->BO_deletePost($_GET['id']);
+                break;
+            case "BO_allComments":
+                $initControllerComments->BO_comments($_GET['id'], $_GET['id']);
+                break;
+            case "BO_updatePost":
+                $initControllerPosts->BO_editPost($_GET['id']);
+                break;
+            case "BO_postUpdated":
+                $initControllerPosts->BO_postModified($_GET['id'], $_POST['postContent']);
                 break;
             default:
             $initControllerPosts->lastPost();
