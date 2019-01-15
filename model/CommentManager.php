@@ -36,4 +36,5 @@ class CommentManager extends Manager
 
         return $delete;
     }
+
 }

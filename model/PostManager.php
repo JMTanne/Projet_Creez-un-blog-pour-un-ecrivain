@@ -51,7 +51,7 @@ class PostManager extends Manager
         return $req;
     }
 
-        public function BO_getPost($postId)
+    public function BO_getPost($postId)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, chapter_id, post_title, post_content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts WHERE id = ?');
@@ -59,5 +59,25 @@ class PostManager extends Manager
         $post = $req->fetch();
 
         return $post;
+    }
+
+    public function BO_removePost($postId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM posts WHERE id = ?');
+        $req->execute(array($postId));
+        $delete = $req->fetch();
+
+        return $delete;
+    }
+
+    public function BO_updatePost($postId, $postContent)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE posts SET post_content = ? WHERE id = ?');
+        $req->execute(array($postContent, $postId));
+        $update = $req->fetch();
+
+        return $update;
     }
 }
