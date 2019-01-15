@@ -16,10 +16,10 @@ require_once('controller/ControllerSessionClass.php');
 
 class ControllerAlerts
 {
-    public function alert($commentId, $commentPostId, $commentAuthor, $commentContent, $postId)
+    public function alert($commentId, $commentPostId, $commentAuthor, $commentContent, $commentDate, $postId)
     {
         $alertManager = new AlertManager();
-        $newAlert = $alertManager->alertComment($commentId, $commentPostId, $commentAuthor, $commentContent);
+        $newAlert = $alertManager->alertComment($commentId, $commentPostId, $commentAuthor, $commentContent, $commentDate);
         
         $session = new Session();
         $session->setFlash('Le commentaire a été signalé. Merci!', 'info');
@@ -38,12 +38,36 @@ class ControllerAlerts
     public function deleteAlert($alertId)
     {
         $alertManager = new AlertManager();
-        $delete = $alertManager->removeAlert($alertId);
+        $deleteAlert = $alertManager->removeAlert($alertId);
 
         $session = new Session();
         $session->setFlash('Le signalement a été supprimé avec succès !', 'success');
 
         header('Location: index.php?action=BO_welcome');
+    }
 
+    public function confirmAlert($commentId, $alertId)
+    {
+        $alertManager = new AlertManager();
+        $deleteComment = $alertManager->removeComment($commentId);
+
+        $alertManager = new AlertManager();
+        $deleteAlert = $alertManager->removeAlert($alertId);
+
+        $session = new Session();
+        $session->setFlash('Le commentaire signalé a été supprimé avec succès !', 'success');
+
+        header('Location: index.php?action=BO_welcome');
+    }
+
+    public function deleteComment($alertId)
+    {
+        $alertManager = new AlertManager();
+        $deleteComment = $alertManager->removeComment($commentId);
+
+        $session = new Session();
+        $session->setFlash('Le commentaire a été supprimé avec succès !', 'success');
+
+        header('Location: index.php?action=BO_welcome');
     }
 }

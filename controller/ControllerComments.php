@@ -23,7 +23,6 @@ class ControllerComments
         $comments = $commentManager->getComments($comments);
 
         require('view/commentsView.php');
-
     }
 
     public function newComment($postId, $commentAuthor, $commentContent)
@@ -34,12 +33,8 @@ class ControllerComments
         $session = new Session();
         $session->setFlash('Votre commentaire a été ajouté !', 'success');
         
-        if ($newComment === false) {
-            throw new \Exception('Impossible d\'ajouter le commentaire !'); // \Exception : mettre un "\" permet d'utiliser le namespace PHP
-        }
-        else {
-            header('Location: index.php?action=comments&id=' . $postId);
-        } 
+        header('Location: index.php?action=comments&id=' . $postId);
+
     }
 
     public function deleteComment($commentId, $postId)
@@ -51,6 +46,16 @@ class ControllerComments
         $session->setFlash('Le commentaire a été supprimé avec succès !', 'success');
 
         header('Location: index.php?action=comments&id=' . $postId);
+    }
 
+    public function BO_comments($postId, $comments)
+    {
+        $postManager = new PostManager();
+        $post = $postManager->getPost($postId);
+
+        $commentManager = new CommentManager();
+        $comments = $commentManager->getComments($comments);
+
+        require('view/BO_commentsView.php');
     }
 }

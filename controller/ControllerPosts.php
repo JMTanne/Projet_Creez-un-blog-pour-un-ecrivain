@@ -63,11 +63,41 @@ class ControllerPosts
         require('view/BO_listPostsView.php');
     }
 
-    public function BO_post($postId)
+    public function BO_post($postId, $comments)
     {
         $postManager = new PostManager();
         $post = $postManager->BO_getPost($postId);
 
+        $commentManager = new CommentManager();
+        $comments = $commentManager->getComments($comments);
+
         require('view/BO_postView.php');
+    }
+
+    public function BO_deletePost($postId)
+    {
+        $postManager = new PostManager();
+        $delete = $postManager->BO_removePost($postId);
+
+        $session = new Session();
+        $session->setFlash('Le Chapitre a été supprimé avec succès !', 'success');
+
+        header('Location: index.php?action=BO_allPosts');
+    }
+
+    public function BO_editPost($postId)
+    {
+        $postManager = new PostManager();
+        $post = $postManager->getPost($postId);
+
+        require('view/BO_modifPostView.php');
+    }
+
+    public function BO_postModified($postId, $postContent)
+    {
+        $postManager = new PostManager();
+        $update = $postManager->BO_updatePost($postId, $postContent);
+
+        header('Location: index.php?action=BO_allPosts&id=' . $postId);
     }
 }
