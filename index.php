@@ -4,16 +4,19 @@ session_start();
 use \P4\Projet\Controller\ControllerPosts;
 use \P4\Projet\Controller\ControllerComments;
 use \P4\Projet\Controller\ControllerAlerts;
+use \P4\Projet\Controller\ControllerLogin;
 
 // Chargement des classes
 require('controller/ControllerPosts.php');
 require('controller/ControllerComments.php');
 require('controller/ControllerAlerts.php');
+require('controller/ControllerLogin.php');
 
 // Création d'un objet "Controller"
 $initControllerPosts = new ControllerPosts;
 $initControllerComments = new ControllerComments;
 $initControllerAlerts = new ControllerAlerts;
+$initControllerLogin = new ControllerLogin;
 
 try {
     // Mise en place du routeur:
@@ -38,8 +41,8 @@ try {
             case "commentDeleted":
                 $initControllerComments->deleteComment($_GET['id'], $_GET['postId']);
                 break;
-            case "registrationLogin":
-                echo "Redirection vers la page 'login";
+            case "login":
+                $initControllerLogin->loginPage();
                 break;
 
             // Ajout des pages "Back Office":
