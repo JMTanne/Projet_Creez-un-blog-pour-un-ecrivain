@@ -20,8 +20,9 @@
                     <?= nl2br(htmlspecialchars($post['post_content'])) ?>
                 </p>
                 <p>
-                    <em><a class="modifPost" href="#">[Modifier le Chapitre]</a></em>
-                    <em><a class="deletePost" href="#">[Supprimer le Chapitre]</a></em>
+                    <em><a class="modifPost" href="index.php?action=BO_updatePost&amp;id=<?= $post['id'] ?>">[Modifier le Chapitre]</a></em>
+                    <em><a class="deletePost" href="index.php?action=BO_deletePost&amp;id=<?= $post['id'] ?>">[Supprimer le Chapitre]</a></em>
+                    <em><a class="deleteComment" href="index.php?action=BO_allComments&amp;id=<?= $post['id'] ?>">[Commentaires]</a></em>
                     <br />
                 </p>
             </div>

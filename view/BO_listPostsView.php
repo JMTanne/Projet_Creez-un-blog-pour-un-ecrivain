@@ -10,6 +10,10 @@ $session->flash();
 
 <?php ob_start(); ?>
 
+<p>
+    <a class="back_link" href="index.php?action=BO_welcome">Retour à l'Accueil</a>
+</p>
+
 <div class="BO_index_pages">
 
     <?php
@@ -37,8 +41,9 @@ $session->flash();
                     nl2br(htmlspecialchars(implode(' ', $contentPreview))) . '... ' ?> <em><a class="all_chapter" href="index.php?action=BO_post&amp;id=<?= $data['id'] ?>">Voir le chapitre entier</a></em>
                     </p>
                     <p>
-                    <em><a class="modifPost" href="#">[Modifier le Chapitre]</a></em>
-                    <em><a class="deletePost" href="#">[Supprimer le Chapitre]</a></em>
+                    <em><a class="modifPost" href="index.php?action=BO_updatePost&amp;id=<?= $data['id'] ?>">[Modifier le Chapitre]</a></em>
+                    <em><a class="deletePost" href="index.php?action=BO_deletePost&amp;id=<?= $data['id'] ?>">[Supprimer le Chapitre]</a></em>
+                    <em><a class="deleteComment" href="index.php?action=BO_allComments&amp;id=<?= $data['id'] ?>">[Commentaires]</a></em>
                     <br />
                     
                     </p>

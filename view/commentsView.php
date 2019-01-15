@@ -31,7 +31,7 @@ $session->flash();
 
 			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">Supprimer</a></p>
 
-			    <p><a class="signal" href="index.php?action=alertComment&amp;commentId=<?= $comment['id'] ?>&amp;commentPostId=<?= $comment['post_id'] ?>&amp;commentAuthor=<?= $comment['comment_author'] ?>&amp;commentContent=<?= $comment['comment_content'] ?>&amp;postId=<?= $post['id'] ?>">Signaler le commentaire</a></p>
+			    <p><a class="signal" href="index.php?action=alertComment&amp;commentId=<?= $comment['id'] ?>&amp;commentPostId=<?= $comment['post_id'] ?>&amp;commentAuthor=<?= $comment['comment_author'] ?>&amp;commentContent=<?= $comment['comment_content'] ?>&amp;commentDate=<?= $comment['creation_date_fr'] ?>&amp;postId=<?= $post['id'] ?>">Signaler le commentaire</a></p>
 
 		</div>
 	<?php

@@ -14,7 +14,7 @@ $session->flash();
 
 		<section id="BO_addPost">
 		
-			<h1>Ajouté facilement un chapitre à votre livre ici:</h1>
+			<h1>Ajoutez facilement un chapitre à votre livre ici:</h1>
 		
 				<p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."</p>
 

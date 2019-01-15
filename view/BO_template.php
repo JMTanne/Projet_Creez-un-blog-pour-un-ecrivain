@@ -21,9 +21,7 @@
                <ul>
                   <li><a class="BO_links_backToSite" href="index.php">Retour au site</a></li>
                   <li><a class="BO_links_header" href="index.php?action=BO_addPost">Ajout Chapitre</a></li>
-<!--                   <li><a class="BO_links_header" href="#">Liste Chapitres</a></li> -->
-                  <li><a class="BO_links_header" href="index.php?action=BO_allPosts">Modif'/Suppr' Chapitre</a></li>
-                  <li><a class="BO_links_header" href="#">Modération commentaires</a></li>
+                  <li><a class="BO_links_header" href="index.php?action=BO_allPosts">Gestion Chapitres</a></li>
                   
                </ul>
             </nav>

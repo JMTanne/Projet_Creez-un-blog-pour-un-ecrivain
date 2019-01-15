@@ -30,12 +30,13 @@ $session->flash();
 			?>
 		    	<div class="alerts">
 		        	<h3>
-		            	<em>Le commentaire de <strong><?= htmlspecialchars($data['alert_commentAuthor']) ?></strong></em>
-		            	<em>a été signalé le <?= $data['creation_date_fr'] ?></em><br/>
+		        		<em>Signalement du <?= $data['creation_date_fr'] ?></em><br/>
+		            	<em>Le commentaire de <strong><?= htmlspecialchars($data['alert_commentAuthor']) ?></strong> publié le <?= htmlspecialchars($data['alert_commentDate']) ?></em>
+		            	
 		            </h3>
 		            <p>
 		            	Voici son commentaire : <em>"<?= htmlspecialchars($data['alert_commentContent']) ?>"</em>
-		            	<br/><em><a class="deleteAlert" href="index.php?action=BO_deleteAlert&amp;alertId=<?= $data['id'] ?>">Supprimer le signalement ?</a></em></p>
+		            	<br/><em><a class="validComment" href="index.php?action=BO_deleteAlert&amp;alertId=<?= $data['id'] ?>">[Valider le commentaire]</a></em><em> - </em><em><a class="deleteComment" href="index.php?action=BO_validAlert&amp;commentId=<?= $data['alert_commentId'] ?>&amp;alertId=<?= $data['id'] ?>">[Supprimer le commentaire]</a></em></p>
 		            </p>
 
 		        	
