@@ -73,6 +73,11 @@ nav li{
     padding-top: 6px;
 }
 
+#admin_link{
+    color: #1e8cb5;
+    font-style: italic;
+}
+
 /* Sections de la page welcome */
 .index_pages{
     display: flex;
