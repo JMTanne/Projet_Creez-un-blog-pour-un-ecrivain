@@ -44,6 +44,12 @@ try {
             case "login":
                 $initControllerLogin->loginPage();
                 break;
+            case "checkLogin":
+                $initControllerLogin->checkLogin($_POST['username'], $_POST['password']);
+                break;
+            case "logout":
+                $initControllerLogin->logout();
+                break;
 
             // Ajout des pages "Back Office":
             case "BO_welcome":
@@ -54,6 +60,9 @@ try {
                 break;
             case "BO_validAlert": // delete comment
                 $initControllerAlerts->confirmAlert($_GET['commentId'], $_GET['alertId']);
+                break;
+            case "BO_commentDeleted":
+                $initControllerComments->BO_deleteComment($_GET['id'], $_GET['postId']);
                 break;
             case "BO_addPost":
                 $initControllerPosts->addPost();
