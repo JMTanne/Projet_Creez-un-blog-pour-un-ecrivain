@@ -23,9 +23,25 @@
                <ul>
                   <li><a class="links_header" href="index.php">Accueil</a></li>
                   <li><a class="links_header" href="index.php?action=allPosts">Lire le livre</a></li>
-                  <li><a class="links_header" href="index.php?action=login">Identification</a></li> 
-                  <li><a class="links_header" href="index.php?action=BO_welcome">Administration</a></li>
                   
+                  <?php
+                  if (isset($_SESSION['username'])) {
+                     ?>
+                        <li><a class="links_header" href="index.php?action=logout">Déconnexion</a></li>
+                     <?php
+                  } else {
+                     ?>
+                        <li><a class="links_header" href="index.php?action=login">Identification</a></li> 
+                     <?php
+                  }
+                  ?>
+                  <?php
+                  if ((isset($_SESSION['role'])) && ($_SESSION['role'] === 'admin')) {
+                     ?>
+                     <li><a id="admin_link" class="links_header" href="index.php?action=BO_welcome">Administration</a></li>
+                     <?php
+                  }
+                  ?>
                </ul>
             </nav>
          </header>

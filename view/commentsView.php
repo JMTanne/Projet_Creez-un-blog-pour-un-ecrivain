@@ -29,15 +29,31 @@ $session->flash();
 			    <p><strong><?= htmlspecialchars($comment['comment_author']) ?></strong> le <?= $comment['creation_date_fr'] ?></p>
 			    <p><em class="italic">"<?= nl2br($comment['comment_content']) ?>"</em>
 
+			    <?php
+                  if ((isset($_SESSION['role']))) {
+                  	if (($_SESSION['role'] === 'admin') || ($_SESSION['role'] === 'moderator')) {
+                  	?>
 			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>"" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
-
+			   	<?php
+			   		}
+			   	} ?>
+			   	<?php
+                  if ((isset($_SESSION['role']))) {
+                  	if (($_SESSION['role'] === 'moderator') || ($_SESSION['role'] === 'regUser')) {
+                  	?>
 			    <p><a class="signal" href="index.php?action=alertComment&amp;commentId=<?= $comment['id'] ?>&amp;commentPostId=<?= $comment['post_id'] ?>&amp;commentAuthor=<?= $comment['comment_author'] ?>&amp;commentContent=<?= $comment['comment_content'] ?>&amp;commentDate=<?= $comment['creation_date_fr'] ?>&amp;postId=<?= $post['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir signaler ce commentaire ?'));">Signaler le commentaire</a></p>
+			    <?php
+			   		}
+			   	} ?>
 
 		</div>
 	<?php
 	}
 	?>
-
+	<?php
+      if ((isset($_SESSION['role']))) {
+      	if (($_SESSION['role'] === 'moderator') || ($_SESSION['role'] === 'regUser')) {
+      	?>
 	<p>Ajouter un commentaire ?</p>
 
 	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
@@ -53,6 +69,9 @@ $session->flash();
     		<input type="submit" />
 		</div>
 	</form>
+	<?php
+		}
+	} ?>
 	
 </div>
 

@@ -18,13 +18,14 @@ $session->flash();
 
   <h1>Authentification</h1>
 
-  <form id="loginForm"action="#" method="post">
+  <form id="loginForm" action="index.php?action=checkLogin" method="post">
+    
     	<div class="loginForm_container">
       	<label for="uname"><b>Pseudo</b></label>
-      	<input type="text" placeholder="Entrez votre Pseudo" name="uname" required>
+      	<input type="text" placeholder="Entrez votre Pseudo" name="username" required>
 
       	<label for="password"><b>Mot de Passe</b></label>
-      	<input type="password" placeholder="Entrez votre Mot de Passe" name="psw" required>
+      	<input type="password" placeholder="Entrez votre Mot de Passe" name="password" required>
 
       	<button id="loginButton" type="submit">Se Connecter</button>
         <div class="loginForm_error" style="background-color:#f1f1f1">
