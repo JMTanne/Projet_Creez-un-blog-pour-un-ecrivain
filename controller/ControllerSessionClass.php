@@ -3,9 +3,6 @@
 namespace P4\Projet\Controller;
 
 class Session{
-	/*public function __construct(){
-		session_start();
-	}*/
 
 	// Mise en session un message de notification (alert) a afficher sur la prochaine page
 	public function setFlash($message, $type){
