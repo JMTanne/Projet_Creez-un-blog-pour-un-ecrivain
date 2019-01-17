@@ -21,6 +21,7 @@
                <!-- nav part bloc/container -->
                <ul>
                   <li><a class="BO_links_backToSite" href="index.php">Retour au site</a></li>
+                  <li><a class="BO_links_header" href="index.php?action=BO_welcome">Accueil Administration</a></li>
                   <li><a class="BO_links_header" href="index.php?action=BO_addPost">Ajout Chapitre</a></li>
                   <li><a class="BO_links_header" href="index.php?action=BO_allPosts">Gestion Chapitres</a></li>
                   

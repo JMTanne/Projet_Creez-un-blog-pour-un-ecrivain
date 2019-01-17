@@ -1,14 +1,14 @@
 <?php $title = 'Post'; ?>
 
 <?php ob_start(); ?>
-    <p>
-        <a class="back_link" href="index.php?action=allPosts">Retour à la liste des chapitres</a>
-    </p>
-    <br/>
 
-    <h1>Chapitre <?= $post['chapter_id']?></h1>
+<!-- <h1>Chapitre <?= $post['chapter_id']?></h1> -->
 
-    <div class="index_chapitre">
+<div class="body_container">
+
+        <a class="back_link" href="index.php?action=allPosts">Retour aux chapitres</a>
+
+    <div class="index_pages_link">
 
         <div class="chapter_container">
             <div class="chapter">

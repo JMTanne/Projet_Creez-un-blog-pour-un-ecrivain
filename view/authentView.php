@@ -10,10 +10,6 @@ $session->flash();
 
 <?php ob_start(); ?>
 
-<p>
-    <a class="back_link" href="index.php">Retour à l'Accueil</a>
-</p>
-
 <div class="index_pages">
 
   <h1>Authentification</h1>
@@ -32,6 +28,10 @@ $session->flash();
     	</div>
   </form>
 </div>
+
+<p>
+    <a class="back_link" href="index.php">Retour à l'Accueil</a>
+</p>
 
 
 <?php $content = ob_get_clean(); ?>

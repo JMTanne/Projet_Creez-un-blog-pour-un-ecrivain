@@ -6,15 +6,17 @@ $session = new Session();
 $session->flash();
 ?>
 
-<?php $title = 'Modifier votre commentaire'; ?>
+<?php $title = 'Ajout des commentaires'; ?>
 
 <?php ob_start(); ?>
 
-<h1>Commentaires du Chapitre <?= $post['chapter_id']?></h1>
+<div class="body_container">
 
-<p>
     <a class="back_link" href="index.php?action=post&amp;id=<?= $post['id'] ?>">Retour au Chapitre <?= $post['chapter_id']?></a>
-</p>
+
+	<h1>Commentaires du Chapitre <?= $post['chapter_id']?></h1>
+
+</div>
 
 <div class="index_pages">
 
@@ -74,6 +76,7 @@ $session->flash();
 	} ?>
 	
 </div>
+
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

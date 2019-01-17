@@ -2,11 +2,12 @@
 
 <?php ob_start(); ?>
 
-<p>
-    <a class="back_link" href="index.php">Retour à l'Accueil</a>
-</p>
 
-<div class="index_pages">
+<div class="body_container">
+
+        <a class="back_link" href="index.php">Retour à l'Accueil</a>
+
+<div class="index_pages_link">
 
     <?php
     while ($data = $posts->fetch())
@@ -44,6 +45,7 @@
     $posts->closeCursor();
     ?>
 
+</div>
 </div>
 
 <?php $content = ob_get_clean(); ?>

@@ -10,11 +10,11 @@ $session->flash();
 
 <?php ob_start(); ?>
 
-<p>
-    <a class="back_link" href="index.php?action=BO_welcome">Retour à l'Accueil</a>
-</p>
+<div class="body_container">
 
-<div class="BO_index_pages">
+    <a class="BO_back_link" href="index.php?action=BO_welcome">Retour à l'Accueil</a>
+
+<div class="BO_index_pages_link">
 
     <?php
     while ($data = $posts->fetch())
@@ -53,7 +53,7 @@ $session->flash();
     }
     $posts->closeCursor();
     ?>
-
+</div>
 </div>
 
 <?php $content = ob_get_clean(); ?>

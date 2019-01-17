@@ -22,12 +22,37 @@ h3
 {
     font-style: italic;
 }
+
+.body_container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .back_link
 {
-    text-decoration: none;
-    color: blue;
     font-size: 1.2em;
-    margin-left: 260px;
+    background-color: #E6A83D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.BO_back_link
+{
+    font-size: 1.2em;
+    background-color: #1E8CB5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 /* Header */
@@ -35,9 +60,11 @@ header{
     display: flex;
     justify-content: space-between;
 }
+
 header #logo{
     margin-left: 80px;
 }
+
 header nav{
     margin-right: 130px;
 }
@@ -79,6 +106,13 @@ nav li{
 }
 
 /* Sections de la page welcome */
+.index_pages_link{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .index_pages{
     display: flex;
     flex-direction: column;
@@ -92,7 +126,7 @@ nav li{
     margin-right: 20px;
     margin-left: 20px;
     font-size: 1.1em;
-    margin-bottom: 120px;
+    margin-bottom: 180px;
 }
 
 #welcome_section{
@@ -121,9 +155,6 @@ nav li{
 .chapter_container{
     border: 2px solid #e1a55b;
     border-radius: 20px;
-    width: 50%;
-    margin-left: 20px;
-    margin-right: 100px;
     margin-bottom: 20px;
 }
 
@@ -167,10 +198,8 @@ nav li{
 /* Sections de la page "Comments" */
 .comments_container{
     border: 2px solid #e1a55b;
+    width: 30%;
     border-radius: 20px;
-    width: 50%;
-    margin-left: 20px;
-    margin-right: 100px;
     margin-bottom: 20px;
 }
 
@@ -257,10 +286,14 @@ nav li{
 .BO_chapter_container{
     border: 2px solid #1e8cb5;
     border-radius: 20px;
-    width: 50%;
-    margin-left: 20px;
-    margin-right: 100px;
     margin-bottom: 20px;
+}
+
+.BO_index_pages_link{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .BO_index_pages{
@@ -286,10 +319,8 @@ nav li{
 /* Sections BO de la page "Comments" */
 .BO_commentsContainer{
     border: 2px solid #1e8cb5;
+    width: 30%;
     border-radius: 20px;
-    width: 50%;
-    margin-left: 20px;
-    margin-right: 100px;
     margin-bottom: 20px;
 }
 
@@ -303,6 +334,7 @@ nav li{
 /* Bordered form */
 #loginForm {
     display: flex;
+    margin-bottom: 30px;
     width: 30%;
     border: 3px solid #f1f1f1;
 }

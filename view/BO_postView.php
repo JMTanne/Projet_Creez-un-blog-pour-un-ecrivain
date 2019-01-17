@@ -1,13 +1,14 @@
 <?php $title = 'BO_Chapitre'; ?>
 
 <?php ob_start(); ?>
-    <p>
-        <a class="back_link" href="index.php?action=BO_allPosts">Retour à la liste des chapitres</a>
-    </p>
 
-    <h1>Chapitre <?= $post['chapter_id']?></h1>
+<!-- <h1>Chapitre <?= $post['chapter_id']?></h1> -->
 
-    <div class="BO_index_pages">
+<div class="body_container">
+
+        <a class="BO_back_link" href="index.php?action=BO_allPosts">Retour à la liste des chapitres</a>
+
+    <div class="BO_index_pages_link">
 
         <div class="BO_chapter_container">
             <div class="BO_chapter">
