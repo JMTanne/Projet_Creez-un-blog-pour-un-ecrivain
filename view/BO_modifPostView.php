@@ -15,8 +15,6 @@ $session->flash();
 		<section id="BO_modifPost">
 		
 			<h1>Modifiez facilement un chapitre de votre livre ici:</h1>
-		
-				<p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."</p>
 
 		</section>
 

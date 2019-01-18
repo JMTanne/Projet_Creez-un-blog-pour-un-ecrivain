@@ -16,7 +16,10 @@ $session->flash();
 		
 		<h1>Bienvenue sur l'espace Administration du site !</h1>
 	
-		<p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo perspiciatis unde omnis iste. eque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur."</p>
+		<p class="welcome_description"> "Dans ce Back Office, vous pourrez administrer toutes les catégories de votre site : gérer le signalement des commentaires, ajouter ou modifier un chapitre, ou encore en supprimer un."<br/><br/>
+
+		Plus bas, vous verrez les différents commentaires signalés.
+		</p>
 
 	</section>
 

@@ -15,12 +15,17 @@ h3
 {
     background-color:#adadad;
     color:black;
+    border-radius: 20px;
     font-size:1.5em;
     margin-bottom:0px;
 }
 .italic
 {
     font-style: italic;
+}
+
+.welcome_description{
+    text-align: center;
 }
 
 .body_container{
