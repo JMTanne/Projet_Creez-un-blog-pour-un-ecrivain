@@ -213,10 +213,33 @@ nav li{
     font-style: italic;
 }
 
+.newComment_container{
+    border: 2px solid #94A2AE;
+    width: 80%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.newComment_container h4{
+    text-align: center;
+    font-style: italic;
+}
+
+.newComment_container label, input{
+    margin-left: 20px;
+}
+
+.newComment_container input{
+    margin-bottom: 10px;
+}
+
 #author{
+    margin-left: 20px;
     width: 50%;
 }
 #comment{
+    margin-left: 20px;
+    margin-bottom: 10px;
     width: 50%;
 }
 

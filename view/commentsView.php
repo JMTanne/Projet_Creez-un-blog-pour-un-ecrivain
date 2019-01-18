@@ -44,12 +44,14 @@ $session->flash();
       if ((isset($_SESSION['role']))) {
       	if (($_SESSION['role'] === 'moderator') || ($_SESSION['role'] === 'regUser') || ($_SESSION['role'] === 'admin')) {
       	?>
-	<p>Ajouter un commentaire ?</p>
+    <div class="newComment_container">
+
+	<h4>Ajouter un commentaire ?</h4>
 
 	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
 		<div>
     		<label for="author">Auteur</label><br />
-    		<input type="text" id="author" name="comment_author" />
+    		<input type="text" id="author" name="comment_author" value="<?= $_SESSION['username'] ?>" />
 		</div>
 		<div>
     		<label for="comment">Commentaire</label><br />
@@ -59,6 +61,7 @@ $session->flash();
     		<input type="submit" />
 		</div>
 	</form>
+</div>
 	<?php
 		}
 	} ?>
