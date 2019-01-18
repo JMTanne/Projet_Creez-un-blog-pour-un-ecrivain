@@ -198,7 +198,7 @@ nav li{
 /* Sections de la page "Comments" */
 .comments_container{
     border: 2px solid #e1a55b;
-    width: 30%;
+    width: 80%;
     border-radius: 20px;
     margin-bottom: 20px;
 }
@@ -208,6 +208,12 @@ nav li{
     font-style: italic;
 }
 
+#author{
+    width: 50%;
+}
+#comment{
+    width: 50%;
+}
 
 /* Section Back Office */
 .BO_links_header{

@@ -12,7 +12,7 @@ $session->flash();
 
 <div class="index_pages">
 
-  <h1>Authentification</h1>
+  <h1>Identification</h1>
 
   <form id="loginForm" action="index.php?action=checkLogin" method="post">
     

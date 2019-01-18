@@ -10,17 +10,13 @@ $session->flash();
 
 <?php ob_start(); ?>
 
+<h1>Commentaires du Chapitre <?= $post['chapter_id']?></h1>
+
 <div class="body_container">
 
     <a class="back_link" href="index.php?action=post&amp;id=<?= $post['id'] ?>">Retour au Chapitre <?= $post['chapter_id']?></a>
 
-	<h1>Commentaires du Chapitre <?= $post['chapter_id']?></h1>
-
-</div>
-
-<div class="index_pages">
-
-	<p>Les commentaires du chapitre :</p>
+<div class="index_pages_link">
 
 	<?php
 	while ($comment = $comments->fetch())
@@ -39,22 +35,14 @@ $session->flash();
 			   	<?php
 			   		}
 			   	} ?>
-			   	<?php
-                  if ((isset($_SESSION['role']))) {
-                  	if (($_SESSION['role'] === 'moderator') || ($_SESSION['role'] === 'regUser')) {
-                  	?>
 			    <p><a class="signal" href="index.php?action=alertComment&amp;commentId=<?= $comment['id'] ?>&amp;commentPostId=<?= $comment['post_id'] ?>&amp;commentAuthor=<?= $comment['comment_author'] ?>&amp;commentContent=<?= $comment['comment_content'] ?>&amp;commentDate=<?= $comment['creation_date_fr'] ?>&amp;postId=<?= $post['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir signaler ce commentaire ?'));">Signaler le commentaire</a></p>
-			    <?php
-			   		}
-			   	} ?>
-
 		</div>
 	<?php
 	}
 	?>
 	<?php
       if ((isset($_SESSION['role']))) {
-      	if (($_SESSION['role'] === 'moderator') || ($_SESSION['role'] === 'regUser')) {
+      	if (($_SESSION['role'] === 'moderator') || ($_SESSION['role'] === 'regUser') || ($_SESSION['role'] === 'admin')) {
       	?>
 	<p>Ajouter un commentaire ?</p>
 
@@ -76,7 +64,7 @@ $session->flash();
 	} ?>
 	
 </div>
-
+</div>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>
