@@ -330,7 +330,7 @@ nav li{
 /* Sections BO de la page "Comments" */
 .BO_commentsContainer{
     border: 2px solid #1e8cb5;
-    width: 30%;
+    width: 80%;
     border-radius: 20px;
     margin-bottom: 20px;
 }

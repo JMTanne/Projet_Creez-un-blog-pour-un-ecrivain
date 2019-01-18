@@ -10,17 +10,14 @@ $session->flash();
 
 <?php ob_start(); ?>
 
+<h1>Commentaires du Chapitre <?= $post['chapter_id']?></h1>
+
 <div class="body_container">
 
 	<a class="BO_back_link" href="index.php?action=BO_post&amp;id=<?= $post['id'] ?>">Retour au Chapitre <?= $post['chapter_id']?></a>
 
-	<h1>Commentaires du Chapitre <?= $post['chapter_id']?></h1>
 
-</div>
-
-<div class="BO_index_pages">
-
-	<p>Les commentaires du chapitre :</p>
+<div class="BO_index_pages_link">
 
 	<?php
 	while ($comment = $comments->fetch())
@@ -36,6 +33,8 @@ $session->flash();
 	<?php
 	}
 	?>
+
+</div>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('BO_template.php'); ?>
