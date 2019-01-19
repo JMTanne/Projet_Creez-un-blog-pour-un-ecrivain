@@ -40,6 +40,7 @@ class ControllerLogin
     		session_start();
         	$_SESSION['username'] = $username;
         	$_SESSION['role'] = $loginUser['user_role'];
+            $_SESSION['userId'] = $loginUser['id'];
 
 			header('Location: index.php?action=lastPost');
 		}

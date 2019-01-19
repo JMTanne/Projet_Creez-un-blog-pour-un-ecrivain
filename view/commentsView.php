@@ -31,11 +31,20 @@ $session->flash();
                   if ((isset($_SESSION['role']))) {
                   	if (($_SESSION['role'] === 'admin') || ($_SESSION['role'] === 'moderator')) {
                   	?>
-			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>"" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
+			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 			   	<?php
 			   		}
-			   	} ?>
-			    <p><a class="signal" href="index.php?action=alertComment&amp;commentId=<?= $comment['id'] ?>&amp;commentPostId=<?= $comment['post_id'] ?>&amp;commentAuthor=<?= $comment['comment_author'] ?>&amp;commentContent=<?= $comment['comment_content'] ?>&amp;commentDate=<?= $comment['creation_date_fr'] ?>&amp;postId=<?= $post['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir signaler ce commentaire ?'));">Signaler le commentaire</a></p>
+			   	} 
+			   	if ($comment['comment_alert'] == 0) {
+			   		?>
+			    <p><a class="signal" href="index.php?action=alertComment&amp;commentId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>"" onclick="return(confirm('Etes-vous sûr de vouloir signaler ce commentaire ?'));">Signaler le commentaire</a></p>
+			    <?php
+			} else {
+				?>
+				<p>Coucou</p>
+				<?php
+			}
+			?>
 		</div>
 	<?php
 	}

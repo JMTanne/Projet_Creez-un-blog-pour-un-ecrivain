@@ -34,16 +34,16 @@ $session->flash();
 		    	<div class="alerts">
 		        	<h3>
 		        		<em>Signalement du <?= $data['creation_date_fr'] ?></em><br/>
-		            	<em>Le commentaire de <strong><?= htmlspecialchars($data['alert_commentAuthor']) ?></strong> publié le <?= htmlspecialchars($data['alert_commentDate']) ?></em>
+		            	<em>Le commentaire de <strong><?= htmlspecialchars($data['comment_author']) ?></strong>
 		            	
 		            </h3>
 		            <p>
-		            	Voici son commentaire : <em>"<?= $data['alert_commentContent'] ?>"</em>
-		            	<br/><em><a class="validComment" href="index.php?action=BO_deleteAlert&amp;alertId=<?= $data['id'] ?>"" onclick="return(confirm('Etes-vous sûr de vouloir valider ce commentaire signalé ?'));">[Valider le commentaire]</a></em>
+		            	Voici son commentaire : <em>"<?= $data['comment_content'] ?>"</em>
+		            	<br/><em><a class="validComment" href="index.php?action=BO_deleteAlert&amp;commentId=<?= $data['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir valider ce commentaire signalé ?'));">[Valider le commentaire]</a></em>
 		            	
 		            	<em> - </em>
 
-		            	<em><a class="deleteComment" href="index.php?action=BO_validAlert&amp;commentId=<?= $data['alert_commentId'] ?>&amp;alertId=<?= $data['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire signalé ?'));">[Supprimer le commentaire]</a></em></p>
+		            	<em><a class="deleteComment" href="index.php?action=BO_validAlert&amp;commentId=<?= $data['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire signalé ?'));">[Supprimer le commentaire]</a></em></p>
 		            </p>
 			    </div>
 			<?php

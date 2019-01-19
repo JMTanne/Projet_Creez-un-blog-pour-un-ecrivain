@@ -16,10 +16,10 @@ require_once('controller/ControllerSessionClass.php');
 
 class ControllerAlerts
 {
-    public function alert($commentId, $commentPostId, $commentAuthor, $commentContent, $commentDate, $postId)
+    public function alert($commentId, $postId)
     {
         $alertManager = new AlertManager();
-        $newAlert = $alertManager->alertComment($commentId, $commentPostId, $commentAuthor, $commentContent, $commentDate);
+        $newAlert = $alertManager->alertComment($commentId);
         
         $session = new Session();
         $session->setFlash('Le commentaire a été signalé. Merci!', 'info');
@@ -46,13 +46,10 @@ class ControllerAlerts
         header('Location: index.php?action=BO_welcome');
     }
 
-    public function confirmAlert($commentId, $alertId)
+    public function confirmAlert($commentId)
     {
         $alertManager = new AlertManager();
         $deleteComment = $alertManager->removeComment($commentId);
-
-        $alertManager = new AlertManager();
-        $deleteAlert = $alertManager->removeAlert($alertId);
 
         $session = new Session();
         $session->setFlash('Le commentaire signalé a été supprimé avec succès !', 'success');
@@ -60,7 +57,7 @@ class ControllerAlerts
         header('Location: index.php?action=BO_welcome');
     }
 
-    public function deleteComment($alertId)
+    public function deleteComment($commentId)
     {
         $alertManager = new AlertManager();
         $deleteComment = $alertManager->removeComment($commentId);

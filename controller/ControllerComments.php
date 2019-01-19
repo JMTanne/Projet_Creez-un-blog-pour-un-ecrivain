@@ -5,11 +5,13 @@ namespace P4\Projet\Controller;
 // Appel des namespaces
 use \P4\Projet\Model\PostManager;
 use \P4\Projet\Model\CommentManager;
+use \P4\Projet\Model\AlertManager;
 use \P4\Projet\Controller\Session;
 
 // Chargement des classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/AlertManager.php');
 require_once('controller/ControllerSessionClass.php');
 
 class ControllerComments

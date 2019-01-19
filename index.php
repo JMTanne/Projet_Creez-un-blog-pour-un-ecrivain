@@ -36,7 +36,7 @@ try {
                 $initControllerComments->newComment($_GET['id'], $_POST['comment_author'], $_POST['comment_content']);
                 break;
             case "alertComment":
-                $initControllerAlerts->alert($_GET['commentId'], $_GET['commentPostId'], $_GET['commentAuthor'], $_GET['commentContent'], $_GET['commentDate'], $_GET['postId']);
+                $initControllerAlerts->alert($_GET['commentId'], $_GET['postId']);
                 break;
             case "commentDeleted":
                 $initControllerComments->deleteComment($_GET['id'], $_GET['postId']);
@@ -62,10 +62,10 @@ try {
                 $initControllerAlerts->allAlerts();
                 break;
             case "BO_deleteAlert": // valid comment
-                $initControllerAlerts->deleteAlert($_GET['alertId']);
+                $initControllerAlerts->deleteAlert($_GET['commentId']);
                 break;
             case "BO_validAlert": // delete comment
-                $initControllerAlerts->confirmAlert($_GET['commentId'], $_GET['alertId']);
+                $initControllerAlerts->confirmAlert($_GET['commentId']);
                 break;
             case "BO_commentDeleted":
                 $initControllerComments->BO_deleteComment($_GET['id'], $_GET['postId']);
