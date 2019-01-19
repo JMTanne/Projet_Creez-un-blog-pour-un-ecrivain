@@ -363,17 +363,22 @@ nav li{
     font-style: italic;
 }
 
-/* Sections "Authentification" */
+#chapterNumber{
+    margin-left: 0px;
+}
 
-/* Bordered form */
+/* Sections "Authentification" */
+.logRegButtons_container{
+    display: flex;
+    justify-content: space-between;
+}
+/* Login part */
 #loginForm {
     display: flex;
     margin-bottom: 30px;
     width: 30%;
     border: 3px solid #f1f1f1;
 }
-
-/* Full-width inputs */
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -382,8 +387,6 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
-/* Set a style for all buttons */
 #loginButton {
   background-color: #4CAF50;
   color: white;
@@ -394,17 +397,35 @@ input[type=text], input[type=password] {
   cursor: pointer;
   width: 30%;
 }
-
-/* Add a hover effect for buttons */
 #loginButton:hover {
   opacity: 0.8;
 }
-
-/* Add padding to containers */
 .loginForm_container {
   padding: 16px;
 }
-.loginForm_error {
-  padding: 10px;
+
+/* Registration part */
+#regButton{
+  background-color: #1e8cb5;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 30%;
+}
+#regButton:hover {
+  opacity: 0.8;
+}
+
+#regForm{
+    display: flex;
+    margin-bottom: 30px;
+    width: 30%;
+    border: 3px solid #f1f1f1;
+}
+.regForm_container{
+    padding: 16px;
 }
 

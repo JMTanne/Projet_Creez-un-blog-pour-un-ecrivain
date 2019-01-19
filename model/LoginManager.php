@@ -16,4 +16,23 @@ class LoginManager extends Manager
 
         return $loginUser;
     }
+
+    public function newRegistration($username, $password)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('INSERT INTO users(user_name, user_password, user_role, user_creationDate) VALUES(?, ?, "regUser", NOW())');
+        $req->execute(array($username, $password));
+
+        return $this->getLogin($username, $password);
+    }
+
+    public function checkRegUsername($username)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT count(user_name) AS user_name FROM users WHERE user_name = ?'); // If count > 0 : username already exist
+        $req->execute(array($username));
+        $checkUsername = $req->fetch();
+
+        return (int)$checkUsername['user_name'];
+    }
 }

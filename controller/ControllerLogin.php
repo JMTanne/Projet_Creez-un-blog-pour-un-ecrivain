@@ -54,4 +54,49 @@ class ControllerLogin
 
         header('Location: index.php?action=lastPost');
     }
+
+    public function registrationView()
+    {
+        require('view/registrationView.php');
+    }
+
+    public function registration($regUsername, $regPwd, $regConfirmPwd)
+    {
+        $loginManager = new LoginManager();
+        $checkUsername = $loginManager->checkRegUsername($regUsername);
+
+        if ($checkUsername > 0) {
+            $session = new Session();
+            $session->setFlash('Votre pseudo est déjà utilisé, veuillez en choisir un nouveau.', 'danger'); 
+
+            header('Location: index.php?action=registrationView');
+        }
+
+        if ($this->checkRegPasswords($regPwd, $regConfirmPwd)){
+            
+            $loginManager = new LoginManager();
+            $newReg = $loginManager->newRegistration($regUsername, $regPwd);
+
+            session_start();
+            $_SESSION['username'] = $regUsername;
+            $_SESSION['role'] = $newReg['user_role'];
+
+            $session = new Session();
+            $session->setFlash('Bravo ! Vous êtes enregistrés !', 'success'); 
+
+            header('Location: index.php?action=lastPost');
+        } else {
+
+            $session = new Session();
+            $session->setFlash('Vos mots de passes ne sont pas identiques.', 'danger'); 
+
+            header('Location: index.php?action=registrationView');
+        }
+
+    }
+
+    private function checkRegPasswords($pwd, $confirmPwd)
+    {
+        return $pwd == $confirmPwd; //return boolean
+    }
 }

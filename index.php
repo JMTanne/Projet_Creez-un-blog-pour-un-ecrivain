@@ -50,6 +50,12 @@ try {
             case "logout":
                 $initControllerLogin->logout();
                 break;
+            case "registrationView":
+                $initControllerLogin->registrationView();
+                break;
+            case "registration":
+                $initControllerLogin->registration($_POST['regUsername'], $_POST['regPwd'], $_POST['regConfirmPwd']);
+                break;     
 
             // Ajout des pages "Back Office":
             case "BO_welcome":

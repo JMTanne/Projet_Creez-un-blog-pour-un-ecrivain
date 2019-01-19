@@ -22,7 +22,7 @@ class CommentManager extends Manager
         $comments = $db->prepare('INSERT INTO comments(post_id, comment_author, comment_content, creation_date) VALUES(?, ?, ?, NOW())');
         $comments->execute(array($postId, $commentAuthor, $commentContent));
         $newComment = $comments->fetch();
-
+        
         return $newComment;
     }
     

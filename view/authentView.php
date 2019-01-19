@@ -23,15 +23,16 @@ $session->flash();
       	<label for="password"><b>Mot de Passe</b></label>
       	<input type="password" placeholder="Entrez votre Mot de Passe" name="password" required>
 
-      	<button id="loginButton" type="submit">Se Connecter</button>
-        <div class="loginForm_error" style="background-color:#f1f1f1">
+        <div class="logRegButtons_container">
+        	<button id="loginButton" type="submit">Se Connecter</button>
+          <a id="regButton" href="index.php?action=registrationView">S'enregistrer</a>
+
+        </div>
     	</div>
   </form>
-</div>
 
-<p>
-    <a class="back_link" href="index.php">Retour à l'Accueil</a>
-</p>
+  <a class="back_link" href="index.php">Retour à l'Accueil</a>
+</div>
 
 
 <?php $content = ob_get_clean(); ?>
