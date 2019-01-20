@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 18 jan. 2019 à 10:22
+-- Généré le :  Dim 20 jan. 2019 à 21:32
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -25,31 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `alerts`
---
-
-DROP TABLE IF EXISTS `alerts`;
-CREATE TABLE IF NOT EXISTS `alerts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `alert_commentId` int(11) NOT NULL,
-  `alert_postId` int(11) NOT NULL,
-  `alert_commentAuthor` varchar(255) NOT NULL,
-  `alert_commentContent` text NOT NULL,
-  `alert_commentDate` text NOT NULL,
-  `creation_date` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `alerts`
---
-
-INSERT INTO `alerts` (`id`, `alert_commentId`, `alert_postId`, `alert_commentAuthor`, `alert_commentContent`, `alert_commentDate`, `creation_date`) VALUES
-(10, 57, 3, 'Mickey', 'Salut Gabi !', '21/12/2018 à 14h06min37s', '2019-01-14 19:40:32');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `comments`
 --
 
@@ -59,25 +34,27 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `post_id` int(11) NOT NULL,
   `comment_author` varchar(255) NOT NULL,
   `comment_content` text NOT NULL,
+  `comment_alert` int(11) NOT NULL,
   `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `comments`
 --
 
-INSERT INTO `comments` (`id`, `post_id`, `comment_author`, `comment_content`, `creation_date`) VALUES
-(2, 1, 'Santon', 'Hello, voici un autre pour le chapitre 1', '2018-12-10 11:06:21'),
-(3, 1, 'Test', 'Coucou', '2018-12-14 13:17:48'),
-(4, 1, 'Sandrine', 'C\'est beau', '2018-12-14 16:40:06'),
-(5, 3, 'Howi', 'Ce chapitre est vraiment extra !', '2018-12-16 17:52:42'),
-(7, 2, 'TheKnight', 'Mouais, bof ce chapitre', '2018-12-16 18:10:17'),
-(8, 2, 'Gabi', 'Oui c\'est vrai', '2018-12-16 19:22:12'),
-(9, 2, 'Mickey', 'Hello', '2018-12-16 19:27:04'),
-(10, 3, 'Gabi', 'Coucou', '2018-12-16 19:28:44'),
-(51, 1, 'Krakoukass', 'Salut les marsouins', '2018-12-19 11:23:26'),
-(57, 3, 'Mickey', 'Salut Gabi !', '2018-12-21 14:06:37');
+INSERT INTO `comments` (`id`, `post_id`, `comment_author`, `comment_content`, `comment_alert`, `creation_date`) VALUES
+(2, 1, 'Santon', 'Hello, voici un autre pour le chapitre 1', 0, '2018-12-10 11:06:21'),
+(3, 1, 'Test', 'Coucou', 0, '2018-12-14 13:17:48'),
+(4, 1, 'Sandrine', 'C\'est beau', 0, '2018-12-14 16:40:06'),
+(5, 3, 'Howi', 'Ce chapitre est vraiment extra !', 0, '2018-12-16 17:52:42'),
+(7, 2, 'TheKnight', 'Mouais, bof ce chapitre', 0, '2018-12-16 18:10:17'),
+(8, 2, 'Gabi', 'Oui c\'est vrai', 0, '2018-12-16 19:22:12'),
+(9, 2, 'Mickey', 'Hello', 0, '2018-12-16 19:27:04'),
+(10, 3, 'Gabi', 'Coucou', 0, '2018-12-16 19:28:44'),
+(51, 1, 'Krakoukass', 'Salut les marsouins', 0, '2018-12-19 11:23:26'),
+(57, 3, 'Mickey', 'Salut Gabi !', 0, '2018-12-21 14:06:37'),
+(69, 3, 'modo', 'Coucou', 0, '2019-01-19 17:08:10');
 
 -- --------------------------------------------------------
 
@@ -118,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_role` varchar(10) NOT NULL,
   `user_creationDate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
@@ -127,7 +104,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `user_name`, `user_password`, `user_role`, `user_creationDate`) VALUES
 (1, 'admin', 'admin', 'admin', '2019-01-09 09:40:08'),
 (2, 'modo', 'modo', 'moderator', '2019-01-09 09:40:47'),
-(3, 'user', 'user', 'regUser', '2019-01-11 14:17:31');
+(3, 'user', 'user', 'regUser', '2019-01-11 14:17:31'),
+(4, 'Coco', 'lala', 'regUser', '2019-01-19 17:02:30');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
