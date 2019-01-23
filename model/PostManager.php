@@ -71,11 +71,11 @@ class PostManager extends Manager
         return $delete;
     }
 
-    public function BO_updatePost($postId, $postContent)
+    public function BO_updatePost($postId, $postTitle, $postContent)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE posts SET post_content = ? WHERE id = ?');
-        $req->execute(array($postContent, $postId));
+        $req = $db->prepare('UPDATE posts SET post_title = ?, post_content = ? WHERE id = ?');
+        $req->execute(array($postTitle, $postContent, $postId));
         $update = $req->fetch();
 
         return $update;

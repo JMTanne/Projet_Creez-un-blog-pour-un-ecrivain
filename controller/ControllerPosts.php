@@ -93,10 +93,10 @@ class ControllerPosts
         require('view/BO_modifPostView.php');
     }
 
-    public function BO_postModified($postId, $postContent)
+    public function BO_postModified($postId, $postTitle, $postContent)
     {
         $postManager = new PostManager();
-        $update = $postManager->BO_updatePost($postId, $postContent);
+        $update = $postManager->BO_updatePost($postId, $postTitle, $postContent);
 
         header('Location: index.php?action=BO_allPosts&id=' . $postId);
     }

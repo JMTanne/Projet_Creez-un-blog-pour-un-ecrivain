@@ -95,7 +95,7 @@ try {
                 $initControllerPosts->BO_editPost($_GET['id']);
                 break;
             case "BO_postUpdated":
-                $initControllerPosts->BO_postModified($_GET['id'], $_POST['postContent']);
+                $initControllerPosts->BO_postModified($_GET['id'], $_POST['postTitle'], $_POST['postContent']);
                 break;
             default:
             $initControllerPosts->lastPost();
