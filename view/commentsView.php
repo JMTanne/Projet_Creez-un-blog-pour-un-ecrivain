@@ -41,7 +41,7 @@ $session->flash();
 			    <?php
 			} else {
 				?>
-				<p>Coucou</p>
+				<p>Ce commentaire a été signalé. Il sera modéré dans les plus brefs délais.</p>
 				<?php
 			}
 			?>
