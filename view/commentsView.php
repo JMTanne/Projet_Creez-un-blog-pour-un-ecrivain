@@ -47,7 +47,6 @@ $this->flash();
 	?>
 	<?php
       	if ($this->userRole !== "") {
-      		/*if (($this->userRole === 'moderator') || ($this->userRole === 'regUser') || ($this->userRole === 'admin')) {*/
       	?>
     <div class="newComment_container">
 
@@ -56,7 +55,7 @@ $this->flash();
 	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
 		<div>
     		<label for="author">Auteur</label><br />
-    		<input type="text" id="author" name="comment_author" value="<?= $this->userName ?>" />
+    		<span id="author"><em class="italic"><?= $this->userName ?></em></span>
 		</div>
 		<div>
     		<label for="comment">Commentaire</label><br />
@@ -69,7 +68,6 @@ $this->flash();
 </div>
 	<?php
 		}
-	/*}*/
 	?>
 	
 </div>
