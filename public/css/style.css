@@ -414,6 +414,7 @@ input[type=text], input[type=password] {
   border-radius: 10px;
   cursor: pointer;
   width: 30%;
+  text-align: center;
 }
 #regButton:hover {
   opacity: 0.8;

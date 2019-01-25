@@ -33,8 +33,9 @@ $session->flash();
 			?>
 		    	<div class="alerts">
 		        	<h3>
-		        		<em>Signalement du <?= $data['creation_date_fr'] ?></em><br/>
-		            	<em>Le commentaire de <strong><?= htmlspecialchars($data['comment_author']) ?></strong>
+		        		Commentaire de <strong><?= htmlspecialchars($data['comment_author']) ?></strong>
+		        		<em>, publié le <?= $data['creation_date_fr'] ?></em><br/>
+		            	<em>
 		            	
 		            </h3>
 		            <p>
