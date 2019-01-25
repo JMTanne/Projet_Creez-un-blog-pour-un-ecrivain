@@ -1,20 +1,19 @@
 <?php
-// Création d'un namespace
+// Namespace creation
 namespace P4\Projet\Controller;
 
-// Appel des namespaces
+// namespaces used by the Controller
 use \P4\Projet\Model\PostManager;
 use \P4\Projet\Model\CommentManager;
 use \P4\Projet\Model\LoginManager;
-use \P4\Projet\Controller\Session;
 
-// Chargement des classes
+// files used and required for the Controller
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/LoginManager.php');
-require_once('controller/ControllerSessionClass.php');
+require_once('controller/Controller.php');
 
-class ControllerLogin
+class ControllerLogin extends Controller
 {
 	public function loginPage()
     {
@@ -28,18 +27,13 @@ class ControllerLogin
         $loginUser = $loginManager->getLogin($username, $password);
 		
 		if ($loginUser === false) {
-			$session = new Session();
-    		$session->setFlash('Attention ! Vos identifiants sont incorrects.', 'danger');
+    		$this->setFlash('Attention ! Vos identifiants sont incorrects.', 'danger');
 
 			require('view/authentView.php');
 
 		} else {
-			$session = new Session();
-    		$session->setFlash('Vous êtes connecté !', 'success');
+    		$this->setFlash('Vous êtes connecté !', 'success');
     		
-    		session_start();
-        	$_SESSION['username'] = $username;
-        	$_SESSION['role'] = $loginUser['user_role'];
             $_SESSION['userId'] = $loginUser['id'];
 
 			header('Location: index.php?action=lastPost');
@@ -48,11 +42,7 @@ class ControllerLogin
 
     public function logout()
     {
-    	$session = new Session();
-    	$session->setFlash('Vous êtes déconnecté !', 'info');
-
-    	session_destroy();
-
+        session_destroy();
         header('Location: index.php?action=lastPost');
     }
 
@@ -67,8 +57,7 @@ class ControllerLogin
         $isUserExist = $loginManager->isUserExist($regUsername);
 
         if ($isUserExist) {
-            $session = new Session();
-            $session->setFlash('Votre pseudo est déjà utilisé, veuillez en choisir un nouveau.', 'danger'); 
+            $this->setFlash('Votre pseudo est déjà utilisé, veuillez en choisir un nouveau.', 'danger'); 
 
             header('Location: index.php?action=registrationView');
         
@@ -78,17 +67,16 @@ class ControllerLogin
             $newReg = $loginManager->newRegistration($regUsername, $regPwd);
 
             session_start();
-            $_SESSION['username'] = $regUsername;
-            $_SESSION['role'] = $newReg['user_role'];
+            $_SESSION['userId'] = $newReg['id'];
+            $this->userName = $newReg['user_name']; 
+            $this->userRole = $newReg['user_role'];
 
-            $session = new Session();
-            $session->setFlash('Bravo ! Vous êtes enregistrés !', 'success'); 
+            $this->setFlash('Bravo ! Vous êtes enregistrés !', 'success'); 
 
             header('Location: index.php?action=lastPost');
         } else {
 
-            $session = new Session();
-            $session->setFlash('Vos mots de passes ne sont pas identiques.', 'danger'); 
+            $this->setFlash('Vos mots de passes ne sont pas identiques.', 'danger'); 
 
             header('Location: index.php?action=registrationView');
         }

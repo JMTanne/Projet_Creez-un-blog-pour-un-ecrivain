@@ -25,7 +25,7 @@
                   <li><a class="links_header" href="index.php?action=allPosts">Lire le livre</a></li>
                   
                   <?php
-                  if (isset($_SESSION['username'])) {
+                  if ($this->userName !== "") {
                      ?>
                         <li><a class="links_header" href="index.php?action=logout">Déconnexion</a></li>
                      <?php
@@ -36,7 +36,7 @@
                   }
                   ?>
                   <?php
-                  if ((isset($_SESSION['role'])) && ($_SESSION['role'] === 'admin')) {
+                  if (($this->userRole !== "") && ($this->userRole === 'admin')) {
                      ?>
                      <li><a id="admin_link" class="links_header" href="index.php?action=BO_welcome">Administration</a></li>
                      <?php

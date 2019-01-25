@@ -17,6 +17,16 @@ class LoginManager extends Manager
         return $loginUser;
     }
 
+    public function getUserById($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, user_name, user_role FROM users WHERE id = ?');
+        $req->execute(array($id));
+        $user = $req->fetch();
+
+        return $user;
+    }
+
     public function newRegistration($username, $password)
     {
         $db = $this->dbConnect();

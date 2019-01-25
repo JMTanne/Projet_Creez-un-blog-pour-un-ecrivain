@@ -1,17 +1,17 @@
 <?php
-
-// Création d'un namespace
+// Namespace creation
 namespace P4\Projet\Controller;
 
-// Appel des namespaces
+// namespaces used by the Controller
 use \P4\Projet\Model\PostManager;
 use \P4\Projet\Model\CommentManager;
 
-// Chargement des classes
+// files used and required for the Controller
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('controller/Controller.php');
 
-class ControllerPosts
+class ControllerPosts extends Controller
 {
     public function lastPost()
     {
@@ -48,8 +48,7 @@ class ControllerPosts
     $postManager = new PostManager();
     $newPost = $postManager->postChapter($postId, $postTitle, $postContent);
 
-    $session = new Session();
-    $session->setFlash('Votre nouveau Chapitre a été ajouté au site !', 'success');
+    $this->setFlash('Votre nouveau Chapitre a été ajouté au site !', 'success');
 
     header('Location: index.php?action=BO_allPosts');
     
@@ -79,8 +78,7 @@ class ControllerPosts
         $postManager = new PostManager();
         $delete = $postManager->BO_removePost($postId);
 
-        $session = new Session();
-        $session->setFlash('Le Chapitre a été supprimé avec succès !', 'success');
+        $this->setFlash('Le Chapitre a été supprimé avec succès !', 'success');
 
         header('Location: index.php?action=BO_allPosts');
     }

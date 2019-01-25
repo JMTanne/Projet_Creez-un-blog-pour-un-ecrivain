@@ -1,9 +1,5 @@
 <?php 
-use \P4\Projet\Controller\Session;
-require_once('controller/ControllerSessionClass.php');
-
-$session = new Session();
-$session->flash();
+$this->flash();
 ?>
 
 <?php $title = 'Ajout des commentaires'; ?>
@@ -28,8 +24,8 @@ $session->flash();
 			    <p><em class="italic">"<?= nl2br($comment['comment_content']) ?>"</em>
 
 			    <?php
-                  if ((isset($_SESSION['role']))) {
-                  	if (($_SESSION['role'] === 'admin') || ($_SESSION['role'] === 'moderator')) {
+                  if (($this->userRole != "")) {
+                  	if (($this->userRole === 'admin') || ($this->userRole === 'moderator')) {
                   	?>
 			   	<a class="deleteComment" href="index.php?action=commentDeleted&amp;id=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 			   	<?php
@@ -50,8 +46,8 @@ $session->flash();
 	}
 	?>
 	<?php
-      if ((isset($_SESSION['role']))) {
-      	if (($_SESSION['role'] === 'moderator') || ($_SESSION['role'] === 'regUser') || ($_SESSION['role'] === 'admin')) {
+      	if ($this->userRole !== "") {
+      		/*if (($this->userRole === 'moderator') || ($this->userRole === 'regUser') || ($this->userRole === 'admin')) {*/
       	?>
     <div class="newComment_container">
 
@@ -60,7 +56,7 @@ $session->flash();
 	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
 		<div>
     		<label for="author">Auteur</label><br />
-    		<input type="text" id="author" name="comment_author" value="<?= $_SESSION['username'] ?>" />
+    		<input type="text" id="author" name="comment_author" value="<?= $this->userName ?>" />
 		</div>
 		<div>
     		<label for="comment">Commentaire</label><br />
@@ -73,7 +69,8 @@ $session->flash();
 </div>
 	<?php
 		}
-	} ?>
+	/*}*/
+	?>
 	
 </div>
 </div>

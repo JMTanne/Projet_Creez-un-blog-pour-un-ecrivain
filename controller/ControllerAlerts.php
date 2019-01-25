@@ -1,28 +1,26 @@
 <?php
-// Création d'un namespace
+// Namespace creation
 namespace P4\Projet\Controller;
 
-// Appel des namespaces
+// namespaces used by the Controller
 use \P4\Projet\Model\PostManager;
 use \P4\Projet\Model\CommentManager;
 use \P4\Projet\Model\AlertManager;
-use \P4\Projet\Controller\Session;
 
-// Chargement des classes
+// files used and required for the Controller
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/AlertManager.php');
-require_once('controller/ControllerSessionClass.php');
+require_once('controller/Controller.php');
 
-class ControllerAlerts
+class ControllerAlerts extends Controller
 {
     public function alert($commentId, $postId)
     {
         $alertManager = new AlertManager();
         $newAlert = $alertManager->alertComment($commentId);
         
-        $session = new Session();
-        $session->setFlash('Le commentaire a été signalé. Merci!', 'info');
+        $this->setFlash('Le commentaire a été signalé. Merci!', 'info');
 
         header('Location: index.php?action=comments&id=' . $postId);
     }
@@ -40,8 +38,7 @@ class ControllerAlerts
         $alertManager = new AlertManager();
         $deleteAlert = $alertManager->removeAlert($alertId);
 
-        $session = new Session();
-        $session->setFlash('Le signalement a été supprimé avec succès !', 'success');
+        $this->setFlash('Le signalement a été supprimé avec succès !', 'success');
 
         header('Location: index.php?action=BO_welcome');
     }
@@ -51,8 +48,7 @@ class ControllerAlerts
         $alertManager = new AlertManager();
         $deleteComment = $alertManager->removeComment($commentId);
 
-        $session = new Session();
-        $session->setFlash('Le commentaire signalé a été supprimé avec succès !', 'success');
+        $this->setFlash('Le commentaire signalé a été supprimé avec succès !', 'success');
 
         header('Location: index.php?action=BO_welcome');
     }
@@ -62,8 +58,7 @@ class ControllerAlerts
         $alertManager = new AlertManager();
         $deleteComment = $alertManager->removeComment($commentId);
 
-        $session = new Session();
-        $session->setFlash('Le commentaire a été supprimé avec succès !', 'success');
+        $this->setFlash('Le commentaire a été supprimé avec succès !', 'success');
 
         header('Location: index.php?action=BO_welcome');
     }
