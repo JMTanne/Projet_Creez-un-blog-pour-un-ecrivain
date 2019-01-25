@@ -51,7 +51,7 @@ class ControllerPosts
     $session = new Session();
     $session->setFlash('Votre nouveau Chapitre a été ajouté au site !', 'success');
 
-    header('Location: index.php?action=BO_addPost');
+    header('Location: index.php?action=BO_allPosts');
     
     }
 
