@@ -64,16 +64,15 @@ class ControllerLogin
     public function registration($regUsername, $regPwd, $regConfirmPwd)
     {
         $loginManager = new LoginManager();
-        $checkUsername = $loginManager->checkRegUsername($regUsername);
+        $isUserExist = $loginManager->isUserExist($regUsername);
 
-        if ($checkUsername > 0) {
+        if ($isUserExist) {
             $session = new Session();
             $session->setFlash('Votre pseudo est déjà utilisé, veuillez en choisir un nouveau.', 'danger'); 
 
             header('Location: index.php?action=registrationView');
-        }
-
-        if ($this->checkRegPasswords($regPwd, $regConfirmPwd)){
+        
+        } else if ($this->checkRegPasswords($regPwd, $regConfirmPwd)){
             
             $loginManager = new LoginManager();
             $newReg = $loginManager->newRegistration($regUsername, $regPwd);

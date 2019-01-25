@@ -26,13 +26,13 @@ class LoginManager extends Manager
         return $this->getLogin($username, $password);
     }
 
-    public function checkRegUsername($username)
+    public function isUserExist($username)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT count(user_name) AS user_name FROM users WHERE user_name = ?'); // If count > 0 : username already exist
         $req->execute(array($username));
-        $checkUsername = $req->fetch();
+        $nbUsers = $req->fetch();
 
-        return (int)$checkUsername['user_name'];
+        return (int)$nbUsers['user_name'] > 0;
     }
 }
