@@ -1,16 +1,19 @@
+/* Font define */
 @font-face {
     font-family: "Roboto Regular";
     src: url('public/ressources/font/Roboto-Regular.ttf');
 }
 
-/* Eléments principaux de la page */
+/* General css elements of page */
 body{
     font-family: 'Roboto Regular', serif;
 }
+
 h1, h3
 {
     text-align:center;
 }
+
 h3
 {
     background-color:#adadad;
@@ -19,6 +22,7 @@ h3
     font-size:1.5em;
     margin-bottom:0px;
 }
+
 .italic
 {
     font-style: italic;
@@ -59,8 +63,11 @@ h3
     cursor: pointer;
     margin-right: 10px;
 }
+/***********************/
+/*     Site section    */
+/***********************/
 
-/* Header */
+/* Header css elements */
 header{
     display: flex;
     justify-content: space-between;
@@ -81,7 +88,7 @@ header nav{
     z-index: 1060;
 }
 
-/* Navigation */
+/* Navigation css elements */
 nav ul{
     display: flex;
     list-style-type: none;
@@ -110,7 +117,7 @@ nav li{
     font-style: italic;
 }
 
-/* Sections de la page welcome */
+/* welcome page - css elements */
 .index_pages_link{
     display: flex;
     width: 50%;
@@ -147,7 +154,7 @@ nav li{
     margin-right: 60px;
 }
 
-/* Sections de la page "listPosts" */
+/* listPosts page - css elements */
 #listPosts_index{
     width: 70%;
     height: 100px;
@@ -171,6 +178,7 @@ nav li{
     padding-right: 10px;
     border-radius: 10px;
 }
+
 .chapter
 {
     margin:auto;
@@ -181,18 +189,20 @@ nav li{
     color: blue;
     font-size: 1.2em;
 }
+
 .comments{
     text-decoration: none;
     color: blue;
     font-size: 1.1em;
 }
+
 .alert{
     text-decoration: none;
     color: blue;
     font-size: 1.0em;
 }
 
-/* Sections de la page "Post" */
+/* post page - css elements */
 .index_chapitre{
     display: flex;
     flex-direction: column;
@@ -200,7 +210,7 @@ nav li{
     align-items: center;
 }
 
-/* Sections de la page "Comments" */
+/* comments page - css elements */
 .comments_container{
     border: 2px solid #e1a55b;
     width: 80%;
@@ -237,13 +247,18 @@ nav li{
     margin-left: 20px;
     width: 50%;
 }
+
 #comment{
     margin-left: 20px;
     margin-bottom: 10px;
     width: 50%;
 }
 
-/* Section Back Office */
+/***********************/
+/* Back Office section */
+/***********************/
+
+/* Header css elements */
 .BO_links_header{
     text-decoration: none;
     color: #1e8cb5;
@@ -269,6 +284,7 @@ nav li{
     padding-top: 6px;
 }
 
+/* Footer css elements */
 #BO_welcome_footer{
     margin-top: 10px;
 }
@@ -280,7 +296,7 @@ nav li{
     font-style: italic;
 }
 
-/* Section BO de la page "allAlerts" */
+/* Back Office - Weclome page - css elements */
 #BO_welcome_index{
     width: 70%;
     height: 100px;
@@ -311,12 +327,12 @@ nav li{
     margin:auto;
 }
 
-/* Section BO de la page "addPost" */
+/* Back Office - Add post page - css elements */
 #BO_addPost p{
     text-align: center;
 }
 
-/* Section BO de la page "allPosts" */
+/* Back Office - All posts page - css elements */
 .BO_chapter_container{
     border: 2px solid #1e8cb5;
     border-radius: 20px;
@@ -345,12 +361,13 @@ nav li{
     padding-right: 10px;
     border-radius: 10px;
 }
+
 .BO_chapter
 {
     margin:auto;
 }
 
-/* Sections BO de la page "Comments" */
+/* Back Office - Comments page - css elements */
 .BO_commentsContainer{
     border: 2px solid #1e8cb5;
     width: 80%;
@@ -367,18 +384,19 @@ nav li{
     margin-left: 0px;
 }
 
-/* Sections "Authentification" */
+/* Authentication - General css elements */
 .logRegButtons_container{
     display: flex;
     justify-content: space-between;
 }
-/* Login part */
+/* Login page - css elements */
 #loginForm {
     display: flex;
     margin-bottom: 30px;
     width: 30%;
     border: 3px solid #f1f1f1;
 }
+
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -387,6 +405,7 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
 #loginButton {
   background-color: #4CAF50;
   color: white;
@@ -397,14 +416,16 @@ input[type=text], input[type=password] {
   cursor: pointer;
   width: 30%;
 }
+
 #loginButton:hover {
   opacity: 0.8;
 }
+
 .loginForm_container {
   padding: 16px;
 }
 
-/* Registration part */
+/* Registration page - css elements */
 #regButton{
   background-color: #1e8cb5;
   color: white;
@@ -416,6 +437,7 @@ input[type=text], input[type=password] {
   width: 30%;
   text-align: center;
 }
+
 #regButton:hover {
   opacity: 0.8;
 }
@@ -426,6 +448,7 @@ input[type=text], input[type=password] {
     width: 30%;
     border: 3px solid #f1f1f1;
 }
+
 .regForm_container{
     padding: 16px;
 }
