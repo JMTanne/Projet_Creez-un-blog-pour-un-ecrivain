@@ -5,7 +5,7 @@ namespace P4\Projet\Controller;
 use \P4\Projet\Model\PostManager;
 use \P4\Projet\Model\CommentManager;
 use \P4\Projet\Model\AlertManager;
-// Files used and required for the Controller
+// Class used and required for the Controller
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/AlertManager.php');

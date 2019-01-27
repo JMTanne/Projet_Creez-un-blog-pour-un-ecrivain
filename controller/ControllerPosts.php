@@ -4,7 +4,7 @@ namespace P4\Projet\Controller;
 // Namespaces used by the Controller
 use \P4\Projet\Model\PostManager;
 use \P4\Projet\Model\CommentManager;
-// Files used and required for the Controller
+// Class used and required for the Controller
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('controller/Controller.php');

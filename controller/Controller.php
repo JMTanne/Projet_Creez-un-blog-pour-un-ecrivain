@@ -3,7 +3,7 @@
 namespace P4\Projet\Controller;
 // Namespaces used by the Controller
 use \P4\Projet\Model\LoginManager;
-// Files used and required for the Controller
+// Class used and required for the Controller
 require_once('model/LoginManager.php');
 
 class Controller

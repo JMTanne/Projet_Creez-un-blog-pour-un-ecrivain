@@ -1,12 +1,17 @@
 <?php
-// Création d'un namespace
+// Namespace creation
 namespace P4\Projet\Model;
-
-// Chargement des classes
+// Class used and required for the Model
 require_once("model/Manager.php");
 
 class CommentManager extends Manager
 {
+    /**
+     * Get all comments of a Post
+     * @param int $postId
+     *
+     * @return array $comments
+     */
     public function getComments($postId)
     {
         $db = $this->dbConnect();
@@ -16,6 +21,14 @@ class CommentManager extends Manager
         return $comments;
     }
 
+    /**
+     * Post new comment in database/comments table
+     * @param int $postId
+     * @param string $commentAuthor
+     * @param string $commentContent
+     *
+     * @return array $newComment
+     */
     public function postComment($postId, $commentAuthor, $commentContent)
     {
         $db = $this->dbConnect();
@@ -26,7 +39,12 @@ class CommentManager extends Manager
         return $newComment;
     }
     
-    // Fonction permettant la suppression du commentaire
+    /**
+     * Delete comment on comments table
+     * @param int $commentId
+     *
+     * @return delete $newComment
+     */
     public function removeComment($commentId)
     {
         $db = $this->dbConnect();

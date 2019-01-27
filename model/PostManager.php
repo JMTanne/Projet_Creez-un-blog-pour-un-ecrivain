@@ -1,12 +1,15 @@
 <?php
-// Création d'un namespace
+// Namespace creation
 namespace P4\Projet\Model;
-
-// Chargement des classes
+// Class used and required for the Model
 require_once("model/Manager.php");
 
 class PostManager extends Manager
 {
+    /**
+     * Get all posts datas on posts table and return last one, by creation date
+     * @return array $lastPost
+     */
     public function getLastPost()
     {
         $db = $this->dbConnect();
@@ -15,6 +18,10 @@ class PostManager extends Manager
         return $lastPost;
     }
 
+    /**
+     * Get all Posts datas on posts table 
+     * @return array $req
+     */
     public function getPosts()
     {
         $db = $this->dbConnect();
@@ -23,6 +30,12 @@ class PostManager extends Manager
         return $req;
     }
     
+    /**
+     * Get all Post datas on posts table, depending to his id
+     * @param int $postId
+     *
+     * @return array $post
+     */
     public function getPost($postId)
     {
         $db = $this->dbConnect();
@@ -33,6 +46,14 @@ class PostManager extends Manager
         return $post;
     }
 
+    /**
+     * Add new post on database/posts table
+     * @param int $postId
+     * @param string $postTitle
+     * @param string $postContent
+     *
+     * @return array $newPost
+     */
     public function postChapter($postId, $postTitle, $postContent)
     {
         $db = $this->dbConnect();
@@ -43,6 +64,10 @@ class PostManager extends Manager
         return $newPost;
     }
 
+    /**
+     * Get all Posts datas on posts table
+     * @return array $req
+     */
     public function BO_getPosts()
     {
         $db = $this->dbConnect();
@@ -51,6 +76,12 @@ class PostManager extends Manager
         return $req;
     }
 
+    /**
+     * Get all Post datas on posts table, depending to his id
+     * @param int $postId
+     *
+     * @return array $post
+     */
     public function BO_getPost($postId)
     {
         $db = $this->dbConnect();
@@ -61,6 +92,12 @@ class PostManager extends Manager
         return $post;
     }
 
+    /**
+     * Delete Post on posts table
+     * @param int $postId
+     *
+     * @return array $delete
+     */
     public function BO_removePost($postId)
     {
         $db = $this->dbConnect();
@@ -71,6 +108,14 @@ class PostManager extends Manager
         return $delete;
     }
 
+    /**
+     * Update Post on posts table
+     * @param int $postId
+     * @param string $postTitle
+     * @param string $postContent
+     *
+     * @return array $update
+     */
     public function BO_updatePost($postId, $postTitle, $postContent)
     {
         $db = $this->dbConnect();
