@@ -2,8 +2,6 @@
 
 <?php ob_start(); ?>
 
-<!-- <h1>Chapitre <?= $post['chapter_id']?></h1> -->
-
 <div class="body_container">
 
         <a class="BO_back_link" href="index.php?action=BO_allPosts">Retour à la liste des chapitres</a>

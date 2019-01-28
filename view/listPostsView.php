@@ -12,7 +12,7 @@
     <?php
     while ($data = $posts->fetch())
     {
-        // Script permettant de renvoyer un nombre donné de mots pour prévisualisation des chapitres (explode & implode)
+        // Script for chapters preview : number of words displayed (explode & implode)
         $contentPost = $data['post_content'];
         $limit = 200;
         $contentPreview = explode(' ', $contentPost, ($limit+1));

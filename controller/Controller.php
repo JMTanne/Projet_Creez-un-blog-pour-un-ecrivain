@@ -22,6 +22,7 @@ class Controller
             $this->userName = $user['user_name'];
             $this->userRole = $user['user_role'];
         }
+    }
     /**
      * Add notification flash message in Session
      * @param string $message

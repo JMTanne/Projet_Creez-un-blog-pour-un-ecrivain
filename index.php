@@ -1,28 +1,26 @@
 <?php
 session_start();
-// Création d'un namespace
+// Namespaces used by the Controller
 use \P4\Projet\Controller\ControllerPosts;
 use \P4\Projet\Controller\ControllerComments;
 use \P4\Projet\Controller\ControllerAlerts;
 use \P4\Projet\Controller\ControllerLogin;
-
-// Chargement des classes
+// Class used and required for the Controller
 require('controller/ControllerPosts.php');
 require('controller/ControllerComments.php');
 require('controller/ControllerAlerts.php');
 require('controller/ControllerLogin.php');
-
-// Création d'un objet "Controller"
+// New Objects instances
 $initControllerPosts = new ControllerPosts;
 $initControllerComments = new ControllerComments;
 $initControllerAlerts = new ControllerAlerts;
 $initControllerLogin = new ControllerLogin;
 
 try {
-    // Mise en place du routeur:
+    // Rooter init
     if (isset($_GET['action'])){
         switch ($_GET['action']) {
-            // Ajout des pages "Front":
+            // All FrontEnd Actions cases :
             case "allPosts":
                 $initControllerPosts->allPosts();
                 break;
@@ -57,7 +55,7 @@ try {
                 $initControllerLogin->registration($_POST['regUsername'], $_POST['regPwd'], $_POST['regConfirmPwd']);
                 break;     
 
-            // Ajout des pages "Back Office":
+            // All BackEnd Actions cases :
             case "BO_welcome":
                 $initControllerAlerts->allAlerts();
                 break;
@@ -83,7 +81,6 @@ try {
                 $initControllerPosts->BO_post($_GET['id'], $_GET['id']);
                 break;
             case "BO_modifPost":
-                echo "Redirection vers la page 'BO_modifPost Back Office'";
                 break;
             case "BO_deletePost":
                 $initControllerPosts->BO_deletePost($_GET['id']);
