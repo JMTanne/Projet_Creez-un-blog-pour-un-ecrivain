@@ -8,6 +8,10 @@ require_once('model/LoginManager.php');
 
 class Controller
 {
+	/* @var $userName String */
+	public $userName = "";
+	public $userRole = "";
+
     /* Constructor method call automatically when new object created.
     -> This method check if a $_SESSION['userId'] is present and return user's infos in instances*/
     public function __construct()
@@ -17,11 +21,7 @@ class Controller
             $user           = $loginManager->getUserById($_SESSION['userId']);
             $this->userName = $user['user_name'];
             $this->userRole = $user['user_role'];
-        } else {
-            $this->userName = "";
-            $this->userRole = "";
         }
-    }
     /**
      * Add notification flash message in Session
      * @param string $message
