@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 28 jan. 2019 à 15:47
+-- Généré le :  mar. 29 jan. 2019 à 12:30
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `comment_alert` int(11) NOT NULL,
   `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `comments`
@@ -50,7 +50,7 @@ INSERT INTO `comments` (`id`, `post_id`, `comment_author`, `comment_content`, `c
 (7, 2, 'TheKnight', 'Mouais, bof ce chapitre... J\'ai trouvé ça pas top top.', 0, '2018-12-16 18:10:17'),
 (8, 2, 'Gabi', 'Oui c\'est vrai... Pour pas dire \"Nul\" ! Mais je risque de me faire supprimer mon commentaire è_é', 0, '2018-12-16 19:22:12'),
 (10, 3, 'Max109', 'Hey vraiment pas mal ce chapitre ! J\'ai l\'impression d\'être en Alasaka ! Merci de nous faire voyager Jean.', 0, '2018-12-16 19:28:44'),
-(51, 1, 'Malo_88', 'Je crois que j\'adore ce livre !!!', 0, '2018-12-19 11:23:26'),
+(51, 1, 'Malo_88', 'Je crois que j\'adore ce livre !!!', 1, '2018-12-19 11:23:26'),
 (57, 3, 'Mickey', 'C\'est nuuuuuuuuuuul !!!! Beurk beurk', 1, '2018-12-21 14:06:37');
 
 -- --------------------------------------------------------
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `post_content` text NOT NULL,
   `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `posts`
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_role` varchar(10) NOT NULL,
   `user_creationDate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
@@ -102,11 +102,7 @@ INSERT INTO `users` (`id`, `user_name`, `user_password`, `user_role`, `user_crea
 (1, 'admin', 'admin', 'admin', '2019-01-09 09:40:08'),
 (2, 'modo', 'modo', 'moderator', '2019-01-09 09:40:47'),
 (3, 'user', 'user', 'regUser', '2019-01-11 14:17:31'),
-(12, 'Coco', 'kiki', 'regUser', '2019-01-25 11:13:59'),
-(16, 'Jojo', 'lala', 'regUser', '2019-01-25 11:27:47'),
-(23, 'Nico', 'coco', 'regUser', '2019-01-25 15:18:57'),
-(24, 'Nicoco', 'coco', 'regUser', '2019-01-25 15:24:37'),
-(25, 'Camille', 'lala', 'regUser', '2019-01-25 15:31:52');
+(12, 'Coco', 'Azertyu1', 'regUser', '2019-01-25 11:13:59');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
