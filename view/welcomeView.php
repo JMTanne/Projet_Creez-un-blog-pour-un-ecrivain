@@ -1,6 +1,4 @@
-<?php 
-$this->flash();
-?>
+<?php $this->flash(); ?>
 
 <?php $title = 'Accueil'; ?>
 

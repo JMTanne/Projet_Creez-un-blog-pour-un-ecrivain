@@ -1,6 +1,4 @@
-<?php 
-$this->flash();
-?>
+<?php $this->flash(); ?>
 
 <?php $title = 'Registration'; ?>
 
@@ -13,7 +11,8 @@ $this->flash();
   <form id="regForm" action="index.php?action=registration" method="post">
     
     	<div class="regForm_container">
-      	<label for="uname"><b>Pseudo</b></label>
+      	
+        <label for="uname"><b>Pseudo</b></label>
       	<input type="text" placeholder="Entrez votre Pseudo" name="regUsername" required>
 
       	<label for="password"><b>Mot de Passe</b></label>
@@ -26,10 +25,13 @@ $this->flash();
           <button id="regButton" type="submit">S'enregistrer</button>
 
         </div>
+
     	</div>
+
   </form>
 
   <a class="back_link" href="index.php">Retour à l'Accueil</a>
+  
 </div>
 
 

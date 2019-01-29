@@ -12,6 +12,7 @@
 
       <title><?= $title ?></title>
    </head>
+   
    <body>
          <header>
             <div id="logo">

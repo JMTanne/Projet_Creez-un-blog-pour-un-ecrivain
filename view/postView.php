@@ -9,7 +9,9 @@
     <div class="index_pages_link">
 
         <div class="chapter_container">
+            
             <div class="chapter">
+                
                 <h3>
                     <?= htmlspecialchars($post['post_title']) ?>
                     <em> ajouté le <?= $post['creation_date_fr'] ?></em>
@@ -23,6 +25,7 @@
                     <br />
                 </p>
             </div>
+            
         </div>
 
     </div>
