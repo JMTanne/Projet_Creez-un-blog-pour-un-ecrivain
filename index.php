@@ -31,7 +31,7 @@ try {
                 $initControllerComments->comments($_GET['id'], $_GET['id']);
                 break;
             case "addComment":
-                $initControllerComments->newComment($_GET['id'], $_POST['comment_author'], $_POST['comment_content']);
+                $initControllerComments->newComment($_GET['id'], /*$_POST['comment_author'],*/ $_POST['comment_content']);
                 break;
             case "alertComment":
                 $initControllerAlerts->alert($_GET['commentId'], $_GET['postId']);

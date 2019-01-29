@@ -35,11 +35,11 @@ class ControllerComments extends Controller
      * @param string $commentAuthor
      * @param string $commentContent
      */
-    public function newComment($postId, $commentAuthor, $commentContent)
+    public function newComment($postId, $commentContent)
     {
         $commentManager = new CommentManager();
-        $newComment     = $commentManager->postComment($postId, $commentAuthor, $commentContent);
-        
+        $newComment     = $commentManager->postComment($postId, $this->userName, $commentContent);
+
         $this->setFlash('Votre commentaire a été ajouté !', 'success');
         
         header('Location: index.php?action=comments&id=' . $postId);
