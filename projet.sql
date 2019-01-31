@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 29 jan. 2019 à 12:30
+-- Généré le :  jeu. 31 jan. 2019 à 22:52
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `comment_alert` int(11) NOT NULL,
   `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `comments`
@@ -49,9 +49,10 @@ INSERT INTO `comments` (`id`, `post_id`, `comment_author`, `comment_content`, `c
 (73, 2, 'Nico_A_145', 'Super !!!! La suite la suite la suite !!!!!', 0, '2019-01-25 11:01:08'),
 (7, 2, 'TheKnight', 'Mouais, bof ce chapitre... J\'ai trouvé ça pas top top.', 0, '2018-12-16 18:10:17'),
 (8, 2, 'Gabi', 'Oui c\'est vrai... Pour pas dire \"Nul\" ! Mais je risque de me faire supprimer mon commentaire è_é', 0, '2018-12-16 19:22:12'),
-(10, 3, 'Max109', 'Hey vraiment pas mal ce chapitre ! J\'ai l\'impression d\'être en Alasaka ! Merci de nous faire voyager Jean.', 0, '2018-12-16 19:28:44'),
-(51, 1, 'Malo_88', 'Je crois que j\'adore ce livre !!!', 1, '2018-12-19 11:23:26'),
-(57, 3, 'Mickey', 'C\'est nuuuuuuuuuuul !!!! Beurk beurk', 1, '2018-12-21 14:06:37');
+(10, 3, 'Max109', 'Hey vraiment pas mal ce chapitre ! J\'ai l\'impression d\'être en Alasaka ! Merci de nous faire voyager Jean.', 1, '2018-12-16 19:28:44'),
+(51, 1, 'Malo_88', 'Je crois que j\'adore ce livre !!!', 0, '2018-12-19 11:23:26'),
+(57, 3, 'Mickey', 'C\'est nuuuuuuuuuuul !!!! Beurk beurk', 1, '2018-12-21 14:06:37'),
+(90, 3, 'newUser', 'Hello ! Voici un nouveau commentaire :)', 0, '2019-01-30 16:26:38');
 
 -- --------------------------------------------------------
 
@@ -88,21 +89,21 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) NOT NULL,
-  `user_password` varchar(10) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
   `user_role` varchar(10) NOT NULL,
   `user_creationDate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `user_name`, `user_password`, `user_role`, `user_creationDate`) VALUES
-(1, 'admin', 'admin', 'admin', '2019-01-09 09:40:08'),
-(2, 'modo', 'modo', 'moderator', '2019-01-09 09:40:47'),
-(3, 'user', 'user', 'regUser', '2019-01-11 14:17:31'),
-(12, 'Coco', 'Azertyu1', 'regUser', '2019-01-25 11:13:59');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2019-01-31 21:46:11'),
+(3, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'regUser', '2019-01-31 21:49:54'),
+(2, 'modo', 'b4bd3c0453ef20e66f2fcc026e3816ec', 'moderator', '2019-01-31 21:48:03'),
+(4, 'Coco', '89df4f3cd604f5fccb2345ab329f327c', 'regUser', '2019-01-31 21:54:21');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
