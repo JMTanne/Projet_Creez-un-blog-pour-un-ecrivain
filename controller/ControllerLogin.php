@@ -29,7 +29,9 @@ class ControllerLogin extends Controller
     public function checkLogin($username, $password)
     {
         $loginManager = new LoginManager();
-        $loginUser    = $loginManager->getLogin($username, $password);
+        /*$loginUser    = $loginManager->getLogin($username, $password);*/
+        $hashPwd = md5($password);
+        $loginUser = $loginManager->getLogin($username, $hashPwd);
         
         if ($loginUser === false) {
             $this->setFlash('Attention ! Vos identifiants sont incorrects.', 'danger');
@@ -84,9 +86,11 @@ class ControllerLogin extends Controller
              * Check if password and confirm password are uniforms 
              * If the condition respected, Registration OK and Login with 'userId'
              */
+            $hashPwd = md5($regPwd);
             $loginManager = new LoginManager();
-            $newReg       = $loginManager->newRegistration($regUsername, $regPwd);
-            
+            /*$newReg       = $loginManager->newRegistration($regUsername, $regPwd);*/
+            $newReg = $loginManager->newRegistration($regUsername, $hashPwd);
+
             session_start();
             $_SESSION['userId'] = $newReg['id'];
             $this->userName     = $newReg['user_name'];
