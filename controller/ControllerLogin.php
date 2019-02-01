@@ -29,8 +29,7 @@ class ControllerLogin extends Controller
     public function checkLogin($username, $password)
     {
         $loginManager = new LoginManager();
-        /*$loginUser    = $loginManager->getLogin($username, $password);*/
-        $hashPwd = md5($password);
+        $hashPwd = hash("md5", $password);
         $loginUser = $loginManager->getLogin($username, $hashPwd);
         
         if ($loginUser === false) {
@@ -86,9 +85,8 @@ class ControllerLogin extends Controller
              * Check if password and confirm password are uniforms 
              * If the condition respected, Registration OK and Login with 'userId'
              */
-            $hashPwd = md5($regPwd);
+            $hashPwd = hash("md5", $regPwd);
             $loginManager = new LoginManager();
-            /*$newReg       = $loginManager->newRegistration($regUsername, $regPwd);*/
             $newReg = $loginManager->newRegistration($regUsername, $hashPwd);
 
             session_start();
